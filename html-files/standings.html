@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LaxScores.com - Standings</title>
+    <link rel="icon" type="image/PNG" href="ls.PNG">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1D6BNP09W"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-F1D6BNP09W');
+    </script>
+
+</head>
+<body>
+
+    <link rel="stylesheet" href="style.css?v=1.2">
+    <link rel="'script" href="wintracker.?v=1.1">
+
+	<div class = "header">
+            
+
+            <label class="cheese">LaxScores.com</label>
+
+            <a class = 'button' href='index.html'>
+                Scores
+            </a>
+            <a class = 'button' href='teams.html'>
+                Teams
+            </a>
+            <a class = 'button' href='standings.html'>
+                Standings
+            </a>
+
+    </div>
+    <div id = 'loading'></div>
+    
+    <div class ='filters'>
+
+            <label for="type">League</label>
+            <select class="type" id = 'league' name="type">
+                <option value="PLL">PLL</option>
+                <option value="NLL">NLL</option>
+                <option value="Mann Cup">Mann Cup</option>
+                <option value="World Lacrosse">World Lacrosse</option>
+                <option value="NCAA MD1">NCAA MD1</option>
+                <option value="NCAA MD2">NCAA MD2</option>
+                <option value="NCAA MD3">NCAA MD3</option>
+                <option value="NCAA WD1">NCAA WD1</option>
+                <option value="NCAA WD2">NCAA WD2</option>
+                <option value="NCAA WD3">NCAA WD3</option>
+            </select>
+
+
+            <select class="type" id = 'PLL' name="type">
+                <option value="Regular Season">Regular Season</option>
+                <option value="Championship Series">Championship Series</option>
+            </select>
+
+           
+            <select class="type" id = 'NLL' name="type">
+                <option value="Any">Any</option>
+                <option value="East">East</option>
+                <option value="West">West</option>
+            </select>
+
+            <select class="type" id = 'World Lacrosse' name="type">
+                <option value="Any">Any</option>
+                <option value="Overall">Overall</option>
+                <option value="Pool Play">Pool Play</option>
+            </select>
+
+            <select class="type" id = 'NCAA MD1' name="type">
+                <option value="Any">Any</option>
+                <option value="A-10">A-10</option>
+                <option value="ACC">ACC</option>               
+                <option value="America East">America East</option>                    
+                <option value="ASUN">ASUN</option>                    
+                <option value="Big East">Big East</option>                
+                <option value="Big Ten">Big Ten</option>                        
+                <option value="Colonial">Colonial</option>                     
+                <option value="Ivy League">Ivy League</option>                  
+                <option value="MAAC">MAAC</option>                    
+                <option value="Patriot League">Patriot League</option>                              
+            </select>
+
+            <select class="type" id = 'NCAA MD2' name="type">
+                <option value="Any">Any</option>
+                <option value="CACC">CACC</option>
+                <option value="Carolinas">Carolinas</option>
+                <option value="East Coast">East Coast</option>
+                <option value="GLVC">GLVC</option>
+                <option value="GMAC">GMAC</option>
+                <option value="NE-10">NE-10</option>
+                <option value="Peach Belt">Peach Belt</option>
+                <option value="RMAC">RMAC</option>
+                <option value="SAC">SAC</option>
+                <option value="Sunshine State">Sunshine State</option>
+            </select>
+
+            <select class="type" id = 'NCAA MD3' name="type">
+                <option value="Any">Any</option>
+                <option value="Atlantic East">Atlantic East</option>
+                <option value="CCC">CCC</option>
+                <option value="CCIW">CCIW</option>
+                <option value="Centennial">Centennial</option>
+                <option value="CLC">CLC</option>
+                <option value="CSAC">CSAC</option>
+                <option value="Empire 8">Empire 8</option>
+                <option value="GNAC">GNAC</option>
+                <option value="Heartland">Heartland</option>
+                <option value="Landmark">Landmark</option>
+                <option value="Little East">Little East</option>
+                <option value="MIAA">MIAA</option>
+                <option value="Mid-Atlantic">Mid-Atlantic</option>
+                <option value="MLC">MLC</option>
+                <option value="NACC">NACC</option>
+                <option value="NESCAC">NESCAC</option>
+                <option value="NEWMAC">NEWMAC</option>
+                <option value="North Atlantic">North Atlantic</option>
+                <option value="OAC">OAC</option>
+                <option value="ODAC">ODAC</option>
+                <option value="PAC">PAC</option>
+                <option value="SAA">SAA</option>
+                <option value="Skyline">Skyline</option>
+                <option value="SUNYAC">SUNYAC</option>
+                <option value="United East">United East</option>
+                <option value="USA South">USA South</option>
+            </select>
+
+            <select class="type" id = 'NCAA WD1' name="type">
+                <option value="Any">Any</option>
+                <option value="A-10">A-10</option>
+                <option value="ACC">ACC</option>
+                <option value="America East">America East</option>
+                <option value="ASUN">ASUN</option>
+                <option value="Big East">Big East</option>
+                <option value="Big South">Big South</option>
+                <option value="Big Ten">Big Ten</option>
+                <option value="Colonial">Colonial</option>
+                <option value="Ivy League">Ivy League</option>
+                <option value="MAAC">MAAC</option>
+                <option value="MAC">MAC</option>
+                <option value="NEC">NEC</option>
+                <option value="Pac-12">Pac-12</option>
+                <option value="Patriot League">Patriot League</option>
+                <option value="The American">The American</option>
+            </select>
+
+            <select class="type" id = 'NCAA WD2' name="type">
+                <option value="Any">Any</option>
+                <option value="CACC">CACC</option>
+                <option value="Carolinas">Carolinas</option>
+                <option value="East Coast">East Coast</option>
+                <option value="GLIAC">GLIAC</option>
+                <option value="GLVC">GLVC</option>
+                <option value="GMAC">GMAC</option>
+                <option value="Gulf South">Gulf South</option>
+                <option value="Mountain East">Mountain East</option>
+                <option value="NE-10">NE-10</option>
+                <option value="PSAC">PSAC</option>
+                <option value="RMAC">RMAC</option>
+                <option value="SAC">SAC</option>
+                <option value="Sunshine State">Sunshine State</option>
+            </select>
+
+            <select class="type" id = 'NCAA WD3' name="type">
+                <option value="Any">Any</option>
+                <option value="Atlantic East">Atlantic East</option>
+                <option value="CCC">CCC</option>
+                <option value="CCIW">CCIW</option>
+                <option value="Centennial">Centennial</option>
+                <option value="Coast-To-Coast">Coast-To-Coast</option>
+                <option value="CSAC">CSAC</option>
+                <option value="Empire 8">Empire 8</option>
+                <option value="GNAC">GNAC</option>
+                <option value="Heartland">Heartland</option>
+                <option value="Landmark">Landmark</option>
+                <option value="Liberty League">Liberty League</option>
+                <option value="Little East">Little East</option>
+                <option value="MASCAC">MASCAC</option>
+                <option value="MIAA">MIAA</option>
+                <option value="Mid-Atlantic">Mid-Atlantic</option>
+                <option value="MLC">MLC</option>
+                <option value="NACC">NACC</option>
+                <option value="NCAC">NCAC</option>
+                <option value="NESCAC">NESCAC</option>
+                <option value="NEWMAC">NEWMAC</option>
+                <option value="NJAC">NJAC</option>
+                <option value="North Atlantic">North Atlantic</option>
+                <option value="Northwest">Northwest</option>
+                <option value="OAC">OAC</option>
+                <option value="ODAC">ODAC</option>
+                <option value="PAC">PAC</option>
+                <option value="SAA">SAA</option>
+                <option value="SCIAC">SCIAC</option>
+                <option value="Skyline">Skyline</option>
+                <option value="SUNYAC">SUNYAC</option>
+                <option value="United East">United East</option>
+                <option value="USA South">USA South</option>
+            </select>      
+    </div>    
+    </div>
+
+
+    <div id = 'standings'>
+        <table id = 'model' class = 'standings'>
+            <caption> </caption>
+            <thead>
+                <tr></tr>
+            </thead>
+            <thead>           
+                <tr> 
+                   
+                    <th id = 'q'></th>
+                    <th id = 'divider' colspan="3" style= 'text-align:left;'>Team</th>
+              
+                    <th>W-L</th>
+                    <th>PCT</th>
+                    <th>DIFF</th>
+                    <th>PF</th>
+                    <th id = 'divider'>PA</th>
+
+                 
+                    <th>W-L</th>
+                    <th>PCT</th>
+                    <th>DIFF</th>
+                    <th>PF</th>
+                    <th id = 'divider'>PA</th>
+                </tr>
+                <tbody>
+
+                </tbody>
+            </thead>
+        </table>
+        
+        <div id = 'glossary'> 
+            <h3>Glossary</h3>
+            
+            <div id ='bigspan'>
+                <span style="font-weight:bold">W-L</span> <span style="margin-right:20px; height:20px">: Wins - Losses</span>
+                <span style="font-weight:bold">PCT</span> <span style="margin-right:20px; height:20px">: Winning Percentage</span>
+            </div>
+
+            <div id ='bigspan'>
+                <span style="font-weight:bold">DIFF</span> <span style="margin-right:20px; margin-bottom:20px">: Point Differential</span>
+                <span style="font-weight:bold">PF</span> <span style="margin-right:20px; margin-bottom:20px">: Points Forced</span>
+                <span style="font-weight:bold">PA</span> <span style="margin-right:20px; margin-bottom:20px">: Points Against</span>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+
+    <script>
+        lax()
+        function lax()
+        {   
+            fetch('Display.csv')
+                    .then(response => response.text())
+                    .then(csvData => {        
+                        stuff = csvData.replace(/\n/g,',')
+                        stuff = stuff.split(',')
+            fetch('confnames.csv')
+                    .then(response => response.text())
+                    .then(csvData => {        
+                        confnames = csvData.replace(/\n/g,',')
+                        confnames = confnames.split(',')
+
+            let array = localStorage.getItem('key')
+            array = array.split('#')
+
+
+            // create table for each league
+
+            standings = document.getElementById('standings')
+            // for each element in array
+            for(i=0;i<array.length;i++) 
+            {
+                // split by $
+                split = array[i].split('$')
+                name = split[1] + ' ' + split[2]
+                gp = parseInt(split[3]) + parseInt(split[4])
+                if(split.length>7) gp = parseInt(split[3]) + parseInt(split[4]) + parseInt(split[7]) + parseInt(split[8])
+                if(gp>1 && !name.includes('Out Of Conference Play') && !name.includes('Semifinal'))
+                {
+                    if(document.getElementById(name)==null)
+                    {     
+                        model = document.getElementById('model')
+                        table = model.cloneNode(true)
+                        table.id = name
+                        table.className = 'standings'
+                        table.getElementsByTagName('caption')[0].innerHTML = name
+                        standings.appendChild(table)    
+                      
+                        if(split.length>7)  
+                        {
+                            table.setAttribute('size','long')
+                            thing = table.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0]
+                            
+                            ovr = document.createElement('th')
+                            ovr.innerHTML = 'Overall'
+                            ovr.id = 'confovr'
+                            
+                            ovr.colSpan = 5
+                            conf = document.createElement('th')
+                            conf.innerHTML = 'Conference'
+                            conf.id = 'confovr'
+
+                            colspan = document.createElement('th')
+                            colspan.id = 'confovr'
+                            
+                            conf.colSpan = 5   
+                            colspan.colSpan=4
+                    
+                            thing.appendChild(colspan)
+                            thing.appendChild(conf)
+                            thing.appendChild(ovr)
+                        }
+                    }
+                    table = document.getElementById(name)
+                    tbody = table.getElementsByTagName('tbody')[0]
+
+                    r=[]
+                    tr = document.createElement('tr')
+                    tbody.appendChild(tr)
+
+                    for(x = 0;x<tbody.getElementsByTagName('tr').length-1;x++)
+                    {               
+                        if( (  parseInt(split[3])  /  (  parseInt(split[3])+parseInt(split[4])  )  ) > parseFloat('0'+(((tbody.getElementsByTagName('tr')[x]).getElementsByTagName('td'))[5]).innerHTML)   )
+                        {
+                            r.push(tbody.getElementsByTagName('tr')[x])
+                        }
+                        if( (  parseInt(split[3])  /  (  parseInt(split[3])+parseInt(split[4])  )  ) == parseFloat('0'+(((tbody.getElementsByTagName('tr')[x]).getElementsByTagName('td'))[5]).innerHTML)   )
+                        {
+                            if( (  parseInt(split[5])  -   parseInt(split[6])   ) > parseFloat((((tbody.getElementsByTagName('tr')[x]).getElementsByTagName('td'))[6]).innerHTML)   )
+                            {
+                                r.push(tbody.getElementsByTagName('tr')[x])
+                            }
+                        
+                        }
+                            
+                    }
+                    for(x = 0;x<r.length;x++)
+                    {
+                        tbody.removeChild(r[x])
+                    }
+                    for(x = 0;x<r.length;x++)
+                    {
+                        tbody.appendChild(r[x])
+                    }
+
+
+                    /*
+                    num = tbody.getElementsByTagName('tr')
+                    if(num.length%2==0)tr.id = 'dark' 
+                    else tr.id = 'light'*/
+
+
+                    index = stuff.indexOf(split[0])                     
+                    while(!split[1].includes(stuff[index+5]) && index!=-1)
+                    {
+                        if(index%8==0) index += 8
+                        else index += 1
+                        index = stuff.indexOf(split[0],index)
+                    }
+            
+                    
+
+                    if(split.length>7)  
+                    {
+                        th = table.getElementsByTagName('thead')[1].getElementsByTagName('th')
+                        th[6].id = 'divider'
+
+                        td = document.createElement('td')
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        tr.appendChild(td)
+
+
+                        td = document.createElement('td')
+                        img = document.createElement('img')
+                        img.className = 'logoimg'
+                        img.src = stuff[index+3]
+                        td.appendChild(img)
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        td.id = 'team'
+                        a = document.createElement('a')
+                        a.href='index.html?date=Any&league='+stuff[index+5]+'&conf=Any&team='+stuff[index]
+                        a.innerHTML=stuff[index+1]
+                        td.appendChild(a)
+                        tr.appendChild(td)
+                    /*
+                        td = document.createElement('td')
+                        td.innerHTML = parseInt(split[3])+parseInt(split[4])
+                        tr.appendChild(td)*/
+
+                        td = document.createElement('td')
+                        td.innerHTML = split[3] + '-' + split[4]
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        td.innerHTML = (parseInt(split[3]) / (parseInt(split[3])+parseInt(split[4]))).toFixed(3).replace('0','')
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        td.innerHTML = parseInt(split[5]) - parseInt(split[6])
+                        if(parseInt(td.innerHTML)>0) td.innerHTML = '+' + td.innerHTML
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        td.innerHTML = split[5]
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        td.innerHTML = split[6]
+                        td.id = 'divider'
+                        tr.appendChild(td)
+
+
+/*
+                        td = document.createElement('td')
+                        td.innerHTML = gp
+                        tr.appendChild(td)*/
+
+                        td = document.createElement('td')
+                        td.innerHTML = (parseInt(split[3])+parseInt(split[7])) + '-' + (parseInt(split[4])+parseInt(split[8]))
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        td.innerHTML = ( (parseInt(split[3])+parseInt(split[7])) / (parseInt(gp)) ).toFixed(3).replace('0','')
+                        tr.appendChild(td)
+                                              
+                        td = document.createElement('td')
+                        td.innerHTML = (parseInt(split[5])+parseInt(split[9])) - (parseInt(split[6])+parseInt(split[10]))
+                        if(parseInt(td.innerHTML)>0) td.innerHTML = '+' + td.innerHTML
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        td.innerHTML = parseInt(split[5])+parseInt(split[9])
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        td.id='divider'
+                        td.innerHTML = parseInt(split[6])+parseInt(split[10])
+                        tr.appendChild(td)
+                    }               
+                    else
+                    {
+                        th = table.getElementsByTagName('thead')[1].getElementsByTagName('th')
+                        for (j=7; j<th.length;j++) th[j].style.display = "none"
+
+                        td = document.createElement('td')
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        tr.appendChild(td)
+                    
+                        td = document.createElement('td')
+                        img = document.createElement('img')
+                        img.className = 'logoimg'
+                        if(table.id.includes('World')) img.id = 'country'
+                        img.src = stuff[index+3]
+                        td.appendChild(img)
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        td.id = 'team'
+                        a = document.createElement('a')
+                        a.href='index.html?date=Any&league='+stuff[index+5]+'&conf=Any&team='+stuff[index]
+                        a.innerHTML=stuff[index+1]
+                        td.appendChild(a)
+                        tr.appendChild(td)
+
+                        /*
+                        td = document.createElement('td')
+                        td.innerHTML = gp
+                        tr.appendChild(td)*/
+                        
+                        td = document.createElement('td')
+                        td.innerHTML = split[3] + '-' + split[4]
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        td.innerHTML = ((parseInt(split[3]) / (parseInt(split[3])+parseInt(split[4]))).toFixed(3)).replace('0','')
+                        tr.appendChild(td)
+
+
+                        td = document.createElement('td')
+                        td.innerHTML = parseInt(split[5]) - parseInt(split[6])
+                        if(parseInt(td.innerHTML)>0) td.innerHTML = '+' + td.innerHTML
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        td.innerHTML = split[5]
+                        tr.appendChild(td)
+
+                        td = document.createElement('td')
+                        td.id='divider'
+                        td.innerHTML = split[6]
+                        tr.appendChild(td)    
+                    }
+
+                
+
+                }
+            }
+
+            document.getElementById('glossary').style.display='none'
+
+            tables = document.body.getElementsByClassName('standings')
+            for(i=1;i<tables.length;i++)
+            {
+                for(j=2;j<tables[i].getElementsByTagName('tr').length;j++)
+                {
+                    tables[i].getElementsByTagName('tr')[j].getElementsByTagName('td')[1].innerHTML = j-1             
+                }
+            }
+
+            for(i=1;i<tables.length;i++) for(j=2;j<tables[i].getElementsByTagName('tr').length;j++) tables[i].getElementsByTagName('tr')[j].getElementsByTagName('td')[0].id = 'q'
+
+            for(i=1;i<tables.length;i++)
+            {
+                if(tables[i].id == 'PLL Regular Season')
+                {
+                    tables[i].getElementsByTagName('caption')[0].innerHTML = 'Premier Lacrosse League'
+                    for(j=2;j<tables[i].getElementsByTagName('tr').length-1;j++)
+                    {
+                        if(j<3) tables[i].getElementsByTagName('tr')[j].getElementsByTagName('td')[0].id = 'q-one'
+                        else if(j<6) tables[i].getElementsByTagName('tr')[j].getElementsByTagName('td')[0].id = 'q-two'
+                        else tables[i].getElementsByTagName('tr')[j].getElementsByTagName('td')[0].id = 'q-three'
+                    }
+                }
+
+                else if(tables[i].id == 'NLL East Regular Season' || tables[i].id == 'NLL West Regular Season')
+                {
+
+                   if(tables[i].id == 'NLL East Regular Season') tables[i].getElementsByTagName('caption')[0].innerHTML = 'Eastern Conference'
+                   if(tables[i].id == 'NLL West Regular Season') tables[i].getElementsByTagName('caption')[0].innerHTML = 'Western Conference'
+                   
+                   for(j=2;j<6;j++)
+                    {
+                        tables[i].getElementsByTagName('tr')[j].getElementsByTagName('td')[0].id = 'q-one' 
+                    }          
+                }
+                else if(tables[i].id == 'MSL Regular Season' || tables[i].id == 'WLA Regular Season')
+                {
+
+                   if(tables[i].id == 'MSL Regular Season') tables[i].getElementsByTagName('caption')[0].innerHTML = 'Major Series Lacrosse'
+                   if(tables[i].id == 'WLA Regular Season') tables[i].getElementsByTagName('caption')[0].innerHTML = 'Western Lacrosse Association'
+                   
+                   for(j=2;j<6;j++)
+                    {
+                        tables[i].getElementsByTagName('tr')[j].getElementsByTagName('td')[0].id = 'q-one' 
+                    }
+                }
+                else if(tables[i].id.includes('Pool'))
+                {
+
+                   tables[i].getElementsByTagName('caption')[0].innerHTML = tables[i].getElementsByTagName('caption')[0].innerHTML.replace('World Lacrosse','')
+                    
+                   if(tables[i].id.includes('A'))
+                    {
+                        for(j=2;j<7;j++)
+                        {
+                           if(j<4) tables[i].getElementsByTagName('tr')[j].getElementsByTagName('td')[0].id = 'q-one'
+                           else tables[i].getElementsByTagName('tr')[j].getElementsByTagName('td')[0].id = 'q-two'
+                            
+                        }
+                    }
+                    else
+                    {
+                        for(j=2;j<4;j++)
+                        {
+                            tables[i].getElementsByTagName('tr')[j].getElementsByTagName('td')[0].id = 'q-two'
+                            
+                        }
+                    }
+                    if(tables[i].id.includes('E'))
+                    {
+                        tables[i].getElementsByTagName('tr')[3].getElementsByTagName('td')[0].id='q'
+                    }
+
+                }
+                else if(tables[i].id.includes('NCAA'))
+                {
+                    ref = tables[i].id.split(' ')
+
+                    if(ref[3]!='Conference') num = confnames.indexOf(ref[2]+' '+ref[3])
+                    else num = confnames.indexOf(ref[2])
+
+                    tables[i].getElementsByTagName('caption')[0].innerHTML = confnames[num+1]
+                }
+
+                document.getElementById('glossary').style.display='block'
+                document.getElementById('standings').appendChild(document.getElementById('glossary'))
+            }
+                        
+            
+           
+
+           
+            document.getElementById("model").style.display = 'none'
+           
+           
+            document.getElementById("league").addEventListener("change",function(){change()})
+            document.getElementById("PLL").addEventListener('change',function(){change()})
+            document.getElementById("NLL").addEventListener('change',function(){change()})
+            document.getElementById("World Lacrosse").addEventListener('change',function(){change()})
+            document.getElementById("NCAA MD1").addEventListener('change',function(){change()})
+            document.getElementById("NCAA MD2").addEventListener('change',function(){change()})
+            document.getElementById("NCAA MD3").addEventListener('change',function(){change()})
+            document.getElementById("NCAA WD1").addEventListener('change',function(){change()})
+            document.getElementById("NCAA WD2").addEventListener('change',function(){change()})
+            document.getElementById("NCAA WD3").addEventListener('change',function(){change()})
+            window.addEventListener("popstate",function(event){change()});
+
+        
+
+
+
+//////////////CHANGE///////////////////////////////
+
+
+
+
+
+
+            let curr = new URL(window.location.href)
+            if(curr.toString().length<40) 
+            {
+                curr = 'standings.html?league=PLL&conf=Regular+Season'
+            }
+            window.history.pushState({},'',curr)
+
+            let url = ''
+            
+            function change()
+            {   
+                curr = window.location.href
+    
+                if(url != curr)
+                {      
+                    url = new URL(window.location.href)
+                    
+                    league = url.searchParams.get('league').replace('+',' ') 
+                    document.getElementById('league').value = league
+
+                    if(league!='Mann Cup')
+                    {
+                        conf = url.searchParams.get('conf').replace('+',' ')
+                        document.getElementById(league).value = conf    
+                    }
+                    else conf = 'Any'
+                }
+                else
+                {          
+                    url = new URL(window.location.href)
+                    
+                    league = document.getElementById('league').value
+                    if(league != 'Any' && (league!='Mann Cup')) conf = document.getElementById(league).value
+                    else conf = 'Any'
+
+                    if(conf=='Any'&&(league=='PLL'))conf='Regular+Season'
+                    url.searchParams.set('league', league)
+                    url.searchParams.set('conf', conf)
+
+                    window.history.pushState({}, '', url.toString())
+                }
+
+
+
+                let dropdowns = document.getElementsByClassName('type')
+                for(let i = 1; i<dropdowns.length; i++)
+                {   
+                    if(dropdowns[i].id == league) dropdowns[i].style.display = "block" 
+                    else dropdowns[i].style.display = "none"  
+                }
+              
+
+
+        
+                table = document.getElementsByClassName('standings')
+                for(i=0;i<table.length;i++)
+                {
+                    table[i].style.display = "none"
+                    if((table[i].id.includes(league)))
+                    {           
+                        if(conf!='Any') 
+                        {
+                            if(table[i].id.includes(conf)) table[i].style.display = "block"
+
+                        }
+                        else table[i].style.display = "block"
+                    }   
+                    else if(league=='Mann Cup')
+                    {
+                        if(table[i].id.includes('MSL') || table[i].id.includes('WLA'))  table[i].style.display = "block"
+                    }
+                }  
+               
+                if(document.getElementById('colorspan')!=null) document.getElementById('glossary').removeChild(document.getElementById('colorspan'))
+
+                if(league == 'PLL')
+                {
+                    bigspan = document.createElement('div')
+                    bigspan.id='colorspan'
+                    span = document.createElement('span')
+                    span.innerHTML = 'Qualifies for League Semifinal and Championship Series'
+                    span.style.marginRight="20px"
+                    color = document.createElement('div')
+                    color.id = 'cube-one'
+                    bigspan.appendChild(color)
+                    bigspan.appendChild(span)
+    
+                    span = document.createElement('span')
+                    span.innerHTML = 'Qualifies for League Quarterfinal and Championship Series'
+                    span.style.marginRight="20px"
+                    color = document.createElement('div')
+                    color.id = 'cube-two'
+                    bigspan.appendChild(color)
+                    bigspan.appendChild(span)
+
+                    span = document.createElement('span')
+                    span.innerHTML = 'Qualifies for League Quarterfinal'
+                    color = document.createElement('div')
+                    color.id = 'cube-three'
+                    bigspan.appendChild(color)
+                    bigspan.appendChild(span)
+
+                    document.getElementById('glossary').appendChild(bigspan)
+                }
+                if(league == 'NLL')
+                {
+                    bigspan = document.createElement('div')
+                    bigspan.id='colorspan'
+                    span = document.createElement('span')
+                    span.innerHTML = 'Qualifies for Conference Semifinal'
+                    span.style.marginRight="20px"
+                    color = document.createElement('div')
+                    color.id = 'cube-one'
+                    bigspan.appendChild(color)
+                    bigspan.appendChild(span)
+                    document.getElementById('glossary').appendChild(bigspan)
+                }
+                if(league == 'Mann Cup')
+                {
+                    bigspan = document.createElement('div')
+                    bigspan.id='colorspan'
+                    span = document.createElement('span')
+                    span.innerHTML = 'Qualifies for League Semifinal'
+                    span.style.marginRight="20px"
+                    color = document.createElement('div')
+                    color.id = 'cube-one'
+                    bigspan.appendChild(color)
+                    bigspan.appendChild(span)
+                    document.getElementById('glossary').appendChild(bigspan)
+                }
+                if(league == 'World Lacrosse')
+                {
+                    bigspan = document.createElement('div')
+                    bigspan.id='colorspan'
+                    span = document.createElement('span')
+                    span.innerHTML = 'Qualifies for Quarterfinal'
+                    span.style.marginRight="20px"
+                    color = document.createElement('div')
+                    color.id = 'cube-one'
+                    bigspan.appendChild(color)
+                    bigspan.appendChild(span)
+    
+                    span = document.createElement('span')
+                    span.innerHTML = 'Qualifies for Round of 16'
+                    color = document.createElement('div')
+                    color.id = 'cube-two'
+                    bigspan.appendChild(color)
+                    bigspan.appendChild(span)
+                    document.getElementById('glossary').appendChild(bigspan)
+                }
+
+            }   
+            change()
+            document.body.removeChild(document.getElementById('loading'))
+        })})}
+    </script>
+</body>
+</html>

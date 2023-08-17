@@ -1,0 +1,585 @@
+body
+{
+    background-color:hsl(0, 0%, 96%);
+    overflow-y: scroll;
+}
+.header
+{
+    position:fixed;
+    top:0px;
+    z-index:1000;
+
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
+
+    background-color: #333533;
+
+    display: flex;
+    flex-direction: row;
+
+    left:-10px;
+    width:100%;
+    padding: 30px;
+   
+}
+.cheese
+{
+    color: #7d92c0;
+    font-size: 25px;
+    font-family: Verdana;
+    font-weight:bold;
+    margin-left:10px;
+    margin-right:20px;
+    padding:10px;
+
+}
+.button
+{
+    background-color: #333533;
+    color: #d1d1d1;
+    font-size: 25px;
+    font-family: Verdana;
+    text-decoration:none;
+
+    padding: 10px;
+    position:relative;
+    margin-left:30px; 
+}
+.button:hover{text-decoration: underline;}
+.filters
+{  
+    
+    font-size:25px;       
+    font-family: Verdana;
+    
+    display: flex;
+    flex-direction: row;
+    position:relative;
+
+    
+    margin-top:145px;  
+
+    height:25px;  
+
+    padding-bottom:30px;
+    border-bottom:1px solid #a2a3a264;
+
+     
+}
+.filters select, input
+{
+    border-radius: 10px;
+    
+    border:1px solid #a2a3a264;
+    font-family: Verdana;
+    font-size:25px; 
+    height:40px;
+ 
+    margin-right:10px;
+    position:relative;
+    top:0px;
+ 
+
+}
+.filters label
+{
+    margin-right:10px;
+    margin-top:3px;
+    margin-left:30px;
+}
+
+
+.scores
+{  
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    position: relative;
+}
+
+.con
+{
+    padding-top:20px;
+    padding-left:5px;
+    padding-right:5px;
+    padding-bottom:5px;
+    margin:5px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+#first{
+    margin-left:10px;
+    font-size: 25px;
+    margin:10px;
+}
+#second{
+    background-color: #ffffff;
+    font-size: 18px;
+    border:1px solid #a2a3a264;
+}
+#hover.label:hover{text-decoration: underline;}
+.subcon
+{
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+}
+.container
+{
+    display: flex;
+    flex-wrap:wrap;
+    flex-direction: row;
+    padding-bottom:10px;
+    margin-left:15px;
+}
+.label
+{    
+    margin-right:15px;
+    
+    font-family: Verdana;
+    text-decoration: none;
+    color: #000000;
+    
+}
+#leaguelink
+{
+    font-family: Verdana;
+    font-size:20px;
+    text-decoration: none;
+    color: #6d6d6d;
+    margin-top:5px;
+}
+#leaguelink:hover{text-decoration:underline}
+
+
+
+#no
+{
+    color: #000000;
+    margin-left:10px;
+    font-size: 15px;
+    padding: 10px;
+    font-family: Verdana;
+}
+
+.bug
+{
+    margin:10px;
+    background-color: #FFFFFF;
+    padding: 25px;
+    position: relative;
+
+    width: 355px;
+    min-height: 170px;
+
+    border:1px solid #a2a3a264;
+    border-radius: 20px;
+}
+.top
+{ 
+    position: relative;
+    top:25px;
+}
+.bottom
+{
+    position: relative;
+    top: 90px;
+}
+.logo
+{
+    width: 40px;
+    height: auto;
+    position: absolute; 
+    top:10px;
+}
+.team
+{
+    font-size: 24px;
+    font-family: Verdana;
+
+    position: absolute;
+    left: 60px;
+    top: 12px;
+}
+.record
+{
+    font-size: 15px;
+    font-family: Verdana;
+
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.team:hover{text-decoration: underline;}
+.score
+{
+    margin-left:10px;
+    font-size: 24px;
+    font-family: Verdana;
+
+    position: absolute;
+    right: 20px;
+    top:12px;
+}
+.details
+{
+    font-size: 15px;
+    font-family: Verdana;
+
+    position: absolute;
+    right: 45px;
+    top: 180px; 
+}
+.info
+{
+    color: #6d6d6d;
+    font-size: 15px;
+    font-family: Verdana;
+
+    display: flex;
+    flex-direction: row;
+
+    position: relative;
+    left: 10px;
+    top: 160px;
+
+}
+.final
+{
+    color: #000000;
+    font-size: 15px;
+    font-family: Verdana;
+
+    position: absolute;
+    right: 45px;
+    top: 15px;
+
+}
+.gametype
+{
+    color: #6d6d6d;
+    font-size: 15px;
+    font-family: Verdana;
+
+    position: absolute;
+    left: 30px;
+    top: 15px;
+}
+#loser
+{
+    color: #6d6d6d;
+}
+#winner
+{
+    color: #000000; 
+}
+.jawn
+{
+    background-color: #FFFFFF;
+    padding: 25px;
+    border: 5px solid #333533;
+    border-radius: 0px;
+    position: relative;
+    width: 200px;
+}
+.teamlogo
+{
+    width: 30%;
+    height: auto;
+}
+.name
+{
+    color: #333533; 
+    font-size: 20x;
+    font-family: Verdana;
+
+    position: absolute;
+    left: 100px;
+}
+
+
+#standings{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.standings
+{
+    margin: 5px;
+    font-size: 20x;
+    font-family: Verdana;
+    border-collapse: collapse;
+    padding:15px;
+    margin-bottom:0px;
+}
+.standings caption
+{
+    font-size: 25px;
+    font-weight:bold;
+    text-align: left;
+    padding:15px;
+}
+.standings th
+{
+    text-align: center;
+    padding:25px;
+    font-size: 20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-top: 0.5px solid #7e7e7e;
+    border-bottom: 0.5px solid #7e7e7e;
+
+}
+.standings th:not(#q) 
+{
+    min-width:60px;
+}
+
+.standings td
+{
+    text-align: center;
+    padding:10px;
+    font-size: 20px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-bottom: 0.5px solid #7e7e7e;  
+}
+
+td a
+{
+    color: #000000;
+    text-decoration:none;
+}
+td a:hover
+{
+    text-decoration: underline;
+}
+#dark
+{
+    padding:10px;
+    background-color: #e6e6e6;
+}
+#divider
+{
+    border-right: 0.5px solid #7e7e7e; 
+}
+#team
+{
+    border-right: 0.5px solid #7e7e7e;
+    text-align:left;
+    width:200px;
+}
+#xdivider
+{
+    border-left: 0.5px solid #7e7e7e; 
+}
+#confovr
+{
+    border-top: 0px solid #7e7e7e; 
+    text-align:left; 
+}
+.logoimg
+{
+    padding:0px;
+    height: 29px;
+    width: auto;
+    max-width:60px;
+}
+#q,#q-one,#q-two,#q-three
+{
+    width:3px;
+
+    border:0px;
+    padding:0px;
+    border-right: 0px solid hsl(0, 0%, 96%);
+    border-bottom: 0.5px solid #7e7e7e;
+    border-top: 0.5px solid #7e7e7e;
+    border-left: 0.5px solid #7e7e7e; 
+   
+}
+
+#q-one
+{
+    border-bottom: 1px solid #7e7e7e; 
+    background-color: #0051ff7c;
+}
+#q-two
+{
+    border-bottom: 1px solid #7e7e7e; 
+    background-color: #ff009093;
+}
+#q-three
+{
+    border-bottom: 1px solid #7e7e7e; 
+    background-color: #72E172;
+}
+
+#glossary
+{
+    display:flex;
+    flex-direction: row;
+    font-size: 12px;
+    font-family: Verdana;
+    margin-top:60px;
+    margin-left:20px;
+}
+#cube-one
+{
+    background-color: #0051ff7c;
+    height:15px; 
+    width:15px;
+    margin-right:10px;
+}
+#cube-two
+{
+    background-color: #ff009093;
+    height:15px; 
+    width:15px;
+    margin-right:10px;
+}
+#cube-three
+{
+    background-color: #72E172;
+    height:15px; 
+    width:15px;
+    margin-right:10px;
+}
+#bigspan
+{
+    display:flex;
+    flex-direction: row;
+   
+    margin:10px;
+    margin-left:0px;
+    height:20px;
+}
+#colorspan
+{
+    display:flex;
+    flex-direction: row;
+   
+    margin:10px;
+    margin-left:0px;
+    height:20px;
+}
+#live
+{
+    color:#cb0808;
+}
+
+#country{
+    border: 1px solid #000000;
+}
+#loading, .loading
+{
+    color: #0e1013;
+    z-index:2000;
+    height:100000px;
+    width:100vw;
+    background-color:#FFFFFF;
+    padding-top:150px;
+    padding-left:20px;
+
+    font-family:Verdana;
+    font-weight:bold;
+    font-size:30px;
+}
+
+#loading img, .loading img
+{
+    margin-left:40vw;
+    margin-right:0px;
+    padding-top:150px;
+}
+
+
+#teams-body
+{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.teams
+{  
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    font-family: Verdana;
+    font-size:15px;
+    padding:20px;
+    margin:30px;
+    margin-right:55px;
+    margin-left:55px;
+
+    border-radius: 20px;
+    border:1px solid #a2a3a264;
+    width:300px;
+}
+.teams span
+{
+    width:350px;
+    margin-bottom:20px;
+    margin-left:10px;
+    font-size:25px;
+    font-weight:bold;
+}
+.teams img
+{
+    height:110px;
+    width:auto;
+    margin-left:10px;
+    margin-right:20px;
+}
+.teams img#country
+{
+    height:80px;
+    width:auto;
+}
+.links
+{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left:20px;
+    width:80px;
+    font-size:20px;
+}
+.links a
+{
+    margin-bottom:5px;
+    max-height:15px;
+}
+#leaguename
+{
+    font-family: verdana;
+    font-size:25px;
+    font-weight:bold;
+    margin-left:55px;
+    margin-top:35px;
+    margin-bottom: 20px;
+    width:100%;
+}
+/*
+::-webkit-scrollbar {
+    width: 15px; 
+  }
+  
+  /* Set the color of the track (the area behind the thumb) 
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Set the background color of the scrollbar track 
+  }
+  
+  /* Set the color of the scrollbar thumb (the draggable part) 
+  ::-webkit-scrollbar-thumb {
+    background: #bababa; /* Set the color of the scrollbar thumb 
+    border-radius:10px;
+    width:6px;
+    min-height:50px;
+  }
+  
+
+  
+  

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+     
+	<title>LaxScores.com - Teams</title>
+    <link rel="icon" type="image/PNG" href="ls.PNG">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1D6BNP09W"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F1D6BNP09W');
+    </script>
+
+</head>
+<body >
+
+    <link rel="stylesheet" href="style.css?v=3.3">
+    <script src="wintracker.js"></script>
+
+	<div class = "header">
+
+        <a class = 'cheese'>LaxScores.com</a>
+        <a class = 'button' href='index.html'>
+            Scores
+        </a>
+        <a class = 'button' href='teams.html'>
+            Teams
+        </a>
+        <a class = 'button' href='standings.html'>
+            Standings
+        </a>
+
+    </div>
+
+    <div id = 'loading'></div>
+    
+    <div class ='filters'>
+
+            <label for="type">League</label>
+            <select class="type" id = 'league' name="type">
+                <option value="PLL">PLL</option>
+                <option value="NLL">NLL</option>
+                <option value="MSL">MSL</option>
+                <option value="WLA">WLA</option>
+                <option value="World Lacrosse">World Lacrosse</option>
+                <option value="NCAA MD1">NCAA MD1</option>
+                <option value="NCAA MD2">NCAA MD2</option>
+                <option value="NCAA MD3">NCAA MD3</option>
+                <option value="NCAA WD1">NCAA WD1</option>
+                <option value="NCAA WD2">NCAA WD2</option>
+                <option value="NCAA WD3">NCAA WD3</option>
+            </select>
+
+            <label for="type" id = 'ncaalabel'>Conference</label>
+            <select class="type" id = 'NCAA MD1 ' name="type">
+                <option value="Any">Any</option>
+                <option value="A-10">A-10</option>
+                <option value="ACC">ACC</option>               
+                <option value="America East">America East</option>                    
+                <option value="ASUN">ASUN</option>                    
+                <option value="Big East">Big East</option>                
+                <option value="Big Ten">Big Ten</option>                        
+                <option value="Colonial">Colonial</option>                     
+                <option value="Ivy League">Ivy League</option>                  
+                <option value="MAAC">MAAC</option>                    
+                <option value="Patriot League">Patriot League</option>                              
+            </select>
+
+            <select class="type" id = 'NCAA MD2 ' name="type">
+                <option value="Any">Any</option>
+                <option value="CACC">CACC</option>
+                <option value="Carolinas">Carolinas</option>
+                <option value="East Coast">East Coast</option>
+                <option value="GLVC">GLVC</option>
+                <option value="GMAC">GMAC</option>
+                <option value="NE-10">NE-10</option>
+                <option value="Peach Belt">Peach Belt</option>
+                <option value="RMAC">RMAC</option>
+                <option value="SAC">SAC</option>
+                <option value="Sunshine State">Sunshine State</option>
+            </select>
+
+            <select class="type" id = 'NCAA MD3 ' name="type">
+                <option value="Any">Any</option>
+                <option value="Atlantic East">Atlantic East</option>
+                <option value="CCC">CCC</option>
+                <option value="CCIW">CCIW</option>
+                <option value="Centennial">Centennial</option>
+                <option value="CLC">CLC</option>
+                <option value="CSAC">CSAC</option>
+                <option value="Empire 8">Empire 8</option>
+                <option value="GNAC">GNAC</option>
+                <option value="Heartland">Heartland</option>
+                <option value="Landmark">Landmark</option>
+                <option value="Little East">Little East</option>
+                <option value="MIAA">MIAA</option>
+                <option value="Mid-Atlantic">Mid-Atlantic</option>
+                <option value="MLC">MLC</option>
+                <option value="NACC">NACC</option>
+                <option value="NESCAC">NESCAC</option>
+                <option value="NEWMAC">NEWMAC</option>
+                <option value="North Atlantic">North Atlantic</option>
+                <option value="OAC">OAC</option>
+                <option value="ODAC">ODAC</option>
+                <option value="PAC">PAC</option>
+                <option value="SAA">SAA</option>
+                <option value="Skyline">Skyline</option>
+                <option value="SUNYAC">SUNYAC</option>
+                <option value="United East">United East</option>
+                <option value="USA South">USA South</option>
+            </select>
+
+            <select class="type" id = 'NCAA WD1 ' name="type">
+                <option value="Any">Any</option>
+                <option value="A-10">A-10</option>
+                <option value="ACC">ACC</option>
+                <option value="America East">America East</option>
+                <option value="ASUN">ASUN</option>
+                <option value="Big East">Big East</option>
+                <option value="Big South">Big South</option>
+                <option value="Big Ten">Big Ten</option>
+                <option value="Colonial">Colonial</option>
+                <option value="Ivy League">Ivy League</option>
+                <option value="MAAC">MAAC</option>
+                <option value="MAC">MAC</option>
+                <option value="NEC">NEC</option>
+                <option value="Pac-12">Pac-12</option>
+                <option value="Patriot League">Patriot League</option>
+                <option value="The American">The American</option>
+            </select>
+
+            <select class="type" id = 'NCAA WD2 ' name="type">
+                <option value="Any">Any</option>
+                <option value="CACC">CACC</option>
+                <option value="Carolinas">Carolinas</option>
+                <option value="East Coast">East Coast</option>
+                <option value="GLIAC">GLIAC</option>
+                <option value="GLVC">GLVC</option>
+                <option value="GMAC">GMAC</option>
+                <option value="Gulf South">Gulf South</option>
+                <option value="Mountain East">Mountain East</option>
+                <option value="NE-10">NE-10</option>
+                <option value="PSAC">PSAC</option>
+                <option value="RMAC">RMAC</option>
+                <option value="SAC">SAC</option>
+                <option value="Sunshine State">Sunshine State</option>
+            </select>
+
+            <select class="type" id = 'NCAA WD3 ' name="type">
+                <option value="Any">Any</option>
+                <option value="Atlantic East">Atlantic East</option>
+                <option value="CCC">CCC</option>
+                <option value="CCIW">CCIW</option>
+                <option value="Centennial">Centennial</option>
+                <option value="Coast-To-Coast">Coast-To-Coast</option>
+                <option value="CSAC">CSAC</option>
+                <option value="Empire 8">Empire 8</option>
+                <option value="GNAC">GNAC</option>
+                <option value="Heartland">Heartland</option>
+                <option value="Landmark">Landmark</option>
+                <option value="Liberty League">Liberty League</option>
+                <option value="Little East">Little East</option>
+                <option value="MASCAC">MASCAC</option>
+                <option value="MIAA">MIAA</option>
+                <option value="Mid-Atlantic">Mid-Atlantic</option>
+                <option value="MLC">MLC</option>
+                <option value="NACC">NACC</option>
+                <option value="NCAC">NCAC</option>
+                <option value="NESCAC">NESCAC</option>
+                <option value="NEWMAC">NEWMAC</option>
+                <option value="NJAC">NJAC</option>
+                <option value="North Atlantic">North Atlantic</option>
+                <option value="Northwest">Northwest</option>
+                <option value="OAC">OAC</option>
+                <option value="ODAC">ODAC</option>
+                <option value="PAC">PAC</option>
+                <option value="SAA">SAA</option>
+                <option value="SCIAC">SCIAC</option>
+                <option value="Skyline">Skyline</option>
+                <option value="SUNYAC">SUNYAC</option>
+                <option value="United East">United East</option>
+                <option value="USA South">USA South</option>
+            </select>      
+    </div>
+
+    
+    <script>lax()
+        function lax()
+        {
+            fetch('Display.csv?v=1.3')
+                    .then(response => response.text())
+                    .then(csvData => {        
+                        stuff = csvData.replace(/\n/g,',')
+                        stuff = stuff.split(',')
+            fetch('confnames.csv')
+                    .then(response => response.text())
+                    .then(csvData => {        
+                        confnames = csvData.replace(/\n/g,',')
+                        confnames = confnames.split(',')
+
+            body = document.createElement("div")
+            body.id = 'teams-body'
+            document.body.appendChild(body)
+            leaguename = document.createElement('div')
+            leaguename.id='leaguename'
+            body.appendChild(leaguename)
+            leaguename.style.display='none'
+
+            for(i=0;i<stuff.length;i+=8) 
+            {   
+                div = document.createElement('div')
+                div.className = 'teams'
+                div.id=i
+                body.appendChild(div)
+
+                team = document.createElement('span')
+                team.innerHTML = stuff[i+2]
+
+                
+                logo = document.createElement('img')
+                logo.src = stuff[i+3] 
+                if(stuff[i+5]=='World Lacrosse')logo.id = 'country'
+
+                links = document.createElement('div')
+                links.className = 'links'
+
+                scores = document.createElement('a')
+                scores.innerHTML = 'Scores'
+                scores.href = 'index.html?date=Any&league='+stuff[i+5].replace(' ','+')+'&conf=Any&team='+stuff[i]
+
+                standings = document.createElement('a')
+                standings.innerHTML = 'Standings'
+
+                standings.href = 'standings.html?league='+stuff[i+5].replace(' ','+')+'&conf='+stuff[i+4]
+                if(stuff[i+5]=='PLL') standings.href = 'standings.html?league='+stuff[i+5].replace(' ','+')+'&conf=Regular+Season'
+                if(stuff[i+5]=='WLA'||stuff[i+5]=='MSL')
+                {
+                    standings.href = 'standings.html?league=Mann+Cup&conf=Any'
+                } 
+            
+
+                links.appendChild(scores)
+                links.appendChild(standings)
+
+                div.appendChild(team)
+                div.appendChild(logo)
+                div.appendChild(links)
+            }
+            
+            
+            document.getElementById("league").addEventListener("change",function(){change()})
+            document.getElementById("NCAA MD1 ").addEventListener('change',function(){change()})
+            document.getElementById("NCAA MD2 ").addEventListener('change',function(){change()})
+            document.getElementById("NCAA MD3 ").addEventListener('change',function(){change()})
+            document.getElementById("NCAA WD1 ").addEventListener('change',function(){change()})
+            document.getElementById("NCAA WD2 ").addEventListener('change',function(){change()})
+            document.getElementById("NCAA WD3 ").addEventListener('change',function(){change()})
+        
+
+            let curr = new URL(window.location.href)
+            if(curr.toString().length<36) 
+            {
+                curr = 'teams.html?league=PLL&conf=Any'
+            }
+            window.history.pushState({},'',curr)
+
+            let url = ''
+            function change()
+            {
+                curr = window.location.href
+    
+                if(url != curr)
+                {      
+                    
+                    url = new URL(window.location.href)
+                    
+                    league = url.searchParams.get('league').replace('+',' ') 
+                    document.getElementById('league').value = league
+
+                    if(league.includes('NCAA'))
+                    {
+                        conf = url.searchParams.get('conf').replace('+',' ')
+                        document.getElementById(league+' ').value = conf    
+                    }
+                    else conf = 'Any'
+                }
+                else
+                {          
+                    url = new URL(window.location.href)
+                    
+                    league = document.getElementById('league').value
+                    if(league.includes('NCAA')) conf = document.getElementById(league+' ').value
+                    else conf = 'Any'
+
+                    url.searchParams.set('league', league)
+                    url.searchParams.set('conf', conf)
+
+                    window.history.pushState({}, '', url.toString())
+                }      
+
+                let leaguelist= ['PLL', 'Premier Lacrosse League','NLL','National Lacrosse League','World Lacrosse','World Lacrosse Championship','NCAA MD1','NCAA Men\'s Division 1','NCAA MD2','NCAA Men\'s Division 2','NCAA MD3','NCAA Men\'s Division 3','NCAA WD1','NCAA Women\'s Division 1','NCAA WD2','NCAA Women\'s Division 2','NCAA WD3','NCAA Women\'s Division 3','MSL','Major Series Lacrosse','WLA','Western Lacrosse Association']
+                leaguename = document.getElementById('leaguename')
+                leaguename.innerHTML = leaguelist[leaguelist.indexOf(league)+1]
+                if(conf!='Any')leaguename.innerHTML += ': '+conf
+                leaguename.style.display = 'block'
+
+
+                teams = document.getElementsByClassName('teams')
+                for(i=0;i<teams.length;i++) 
+                { 
+                    teams[i].style.display = 'none'
+                    if(stuff[parseInt(teams[i].id)+5]==league && stuff[parseInt(teams[i].id)]!='TBD'&& stuff[parseInt(teams[i].id)]!='Veterans'&& stuff[parseInt(teams[i].id)]!='Rising Stars')
+                    {
+                        if(league.includes('NCAA'))
+                        {
+                            if(stuff[parseInt(teams[i].id)+4]==conf || conf =='Any')
+                            {          
+                                teams[i].style.display = 'flex'
+                            }    
+                        }
+                        else teams[i].style.display = 'flex'
+                    }
+                }
+
+                dropdowns = document.getElementsByClassName('type')
+                for(let i = 1; i<dropdowns.length; i++)
+                {   
+                    if(dropdowns[i].id == league +' ') dropdowns[i].style.display = "block" 
+                    else dropdowns[i].style.display = "none"  
+                }
+                document.getElementById('ncaalabel').style.display = "none"
+                if(league.includes('NCAA')) document.getElementById('ncaalabel').style.display = "block"
+            }   
+            change()
+            
+            document.body.removeChild(document.getElementById('loading'))
+         })})}
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LaxScores.com - Scores</title>
+    <link rel="icon" type="image/PNG" href="ls.PNG">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1D6BNP09W"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F1D6BNP09W');
+    </script>
+       
+</head>
+<body >
+
+    <link rel="stylesheet" href="style.css?v=11.8">
+    <script src="wintracker.js?v=2.992" ></script>
+
+
+	<div class = "header">
+
+        <a class = 'cheese'>LaxScores.com</a>
+        <a class = 'button' href='index.html'>
+            Scores
+        </a>
+        <a class = 'button' href='teams.html'>
+            Teams
+        </a>
+        <a class = 'button' href='standings.html'>
+            Standings
+        </a>
+
+    </div>
+
+    <div id = 'loading'>
+        <img src = "https://media3.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif?cid=ecf05e47oncbv0ihbffnw111phhlz634pn3t7c5wqzyir4u4&ep=v1_gifs_search&rid=giphy.gif&ct=g">
+        </img>
+    </div>
+    
+    <div class ='filters'>
+            <label for="type"> Date </label>
+            <input type="date" id="date"></input>
+
+            <label for="type">League</label>
+            <select class="type" id = 'league' name="type">
+                <option value="Any">Any</option>
+                <option value="PLL">PLL</option>
+                <option value="NLL">NLL</option>
+                <option value="MSL">MSL</option>
+                <option value="WLA">WLA</option>
+                <option value="World Lacrosse">World Lacrosse</option>
+                <option value="NCAA">NCAA</option>
+            </select>
+
+            <label for="type" id = 'genlabel'>Gender</label>
+            <select class="type" id = 'gender' name="type">
+                <option value="Any">Any</option>
+                <option value=" M">Men's</option>
+                <option value=" W">Women's</option>
+            </select>
+
+            <label for="type" id = 'divlabel'>Division</label>
+            <select class="type" id = 'division' name="type">
+                <option value="Any">Any</option>
+                <option value="D1">D1</option>
+                <option value="D2">D2</option>
+                <option value="D3">D3</option>
+            </select>
+
+            <label for="type" id = 'plllabel'>Competition</label>
+            <select class="type" id = 'PLL ' name="type">
+                <option value="Any">Any</option>
+                <option value="Regular Season">Regular Season</option>
+                <option value="Championship Series">Championship Series</option>
+            </select>
+
+            <label for="type" id = 'ncaalabel'>Conference</label>
+            <select class="type" id = 'NLL ' name="type">
+                <option value="Any">Any</option>
+                <option value="East">East</option>
+                <option value="West">West</option>
+            </select>
+
+            <select class="type" id = 'World Lacrosse ' name="type">
+                <option value="Any">Any</option>
+                <option value="Playoffs">Playoffs</option>
+                <option value="Pool Play">Pool Play</option>
+                <option value="Placement Games">Placement Games</option>
+            </select>
+
+            <select class="type" id = 'NCAA MD1 ' name="type">
+                <option value="Any">Any</option>
+                <option value="A-10">A-10</option>
+                <option value="ACC">ACC</option>               
+                <option value="America East">America East</option>                    
+                <option value="ASUN">ASUN</option>                    
+                <option value="Big East">Big East</option>                
+                <option value="Big Ten">Big Ten</option>                        
+                <option value="Colonial">Colonial</option>                     
+                <option value="Ivy League">Ivy League</option>                  
+                <option value="MAAC">MAAC</option>                    
+                <option value="Patriot League">Patriot League</option>                              
+            </select>
+
+            <select class="type" id = 'NCAA MD2 ' name="type">
+                <option value="Any">Any</option>
+                <option value="CACC">CACC</option>
+                <option value="Carolinas">Carolinas</option>
+                <option value="East Coast">East Coast</option>
+                <option value="GLVC">GLVC</option>
+                <option value="GMAC">GMAC</option>
+                <option value="NE-10">NE-10</option>
+                <option value="Peach Belt">Peach Belt</option>
+                <option value="RMAC">RMAC</option>
+                <option value="SAC">SAC</option>
+                <option value="Sunshine State">Sunshine State</option>
+            </select>
+
+            <select class="type" id = 'NCAA MD3 ' name="type">
+                <option value="Any">Any</option>
+                <option value="Atlantic East">Atlantic East</option>
+                <option value="CCC">CCC</option>
+                <option value="CCIW">CCIW</option>
+                <option value="Centennial">Centennial</option>
+                <option value="CLC">CLC</option>
+                <option value="CSAC">CSAC</option>
+                <option value="Empire 8">Empire 8</option>
+                <option value="GNAC">GNAC</option>
+                <option value="Heartland">Heartland</option>
+                <option value="Landmark">Landmark</option>
+                <option value="Little East">Little East</option>
+                <option value="MIAA">MIAA</option>
+                <option value="Mid-Atlantic">Mid-Atlantic</option>
+                <option value="MLC">MLC</option>
+                <option value="NACC">NACC</option>
+                <option value="NESCAC">NESCAC</option>
+                <option value="NEWMAC">NEWMAC</option>
+                <option value="North Atlantic">North Atlantic</option>
+                <option value="OAC">OAC</option>
+                <option value="ODAC">ODAC</option>
+                <option value="PAC">PAC</option>
+                <option value="SAA">SAA</option>
+                <option value="Skyline">Skyline</option>
+                <option value="SUNYAC">SUNYAC</option>
+                <option value="United East">United East</option>
+                <option value="USA South">USA South</option>
+            </select>
+
+            <select class="type" id = 'NCAA WD1 ' name="type">
+                <option value="Any">Any</option>
+                <option value="A-10">A-10</option>
+                <option value="ACC">ACC</option>
+                <option value="America East">America East</option>
+                <option value="ASUN">ASUN</option>
+                <option value="Big East">Big East</option>
+                <option value="Big South">Big South</option>
+                <option value="Big Ten">Big Ten</option>
+                <option value="Colonial">Colonial</option>
+                <option value="Ivy League">Ivy League</option>
+                <option value="MAAC">MAAC</option>
+                <option value="MAC">MAC</option>
+                <option value="NEC">NEC</option>
+                <option value="Pac-12">Pac-12</option>
+                <option value="Patriot League">Patriot League</option>
+                <option value="The American">The American</option>
+            </select>
+
+            <select class="type" id = 'NCAA WD2 ' name="type">
+                <option value="Any">Any</option>
+                <option value="CACC">CACC</option>
+                <option value="Carolinas">Carolinas</option>
+                <option value="East Coast">East Coast</option>
+                <option value="GLIAC">GLIAC</option>
+                <option value="GLVC">GLVC</option>
+                <option value="GMAC">GMAC</option>
+                <option value="Gulf South">Gulf South</option>
+                <option value="Mountain East">Mountain East</option>
+                <option value="NE-10">NE-10</option>
+                <option value="PSAC">PSAC</option>
+                <option value="RMAC">RMAC</option>
+                <option value="SAC">SAC</option>
+                <option value="Sunshine State">Sunshine State</option>
+            </select>
+
+            <select class="type" id = 'NCAA WD3 ' name="type">
+                <option value="Any">Any</option>
+                <option value="Atlantic East">Atlantic East</option>
+                <option value="CCC">CCC</option>
+                <option value="CCIW">CCIW</option>
+                <option value="Centennial">Centennial</option>
+                <option value="Coast-To-Coast">Coast-To-Coast</option>
+                <option value="CSAC">CSAC</option>
+                <option value="Empire 8">Empire 8</option>
+                <option value="GNAC">GNAC</option>
+                <option value="Heartland">Heartland</option>
+                <option value="Landmark">Landmark</option>
+                <option value="Liberty League">Liberty League</option>
+                <option value="Little East">Little East</option>
+                <option value="MASCAC">MASCAC</option>
+                <option value="MIAA">MIAA</option>
+                <option value="Mid-Atlantic">Mid-Atlantic</option>
+                <option value="MLC">MLC</option>
+                <option value="NACC">NACC</option>
+                <option value="NCAC">NCAC</option>
+                <option value="NESCAC">NESCAC</option>
+                <option value="NEWMAC">NEWMAC</option>
+                <option value="NJAC">NJAC</option>
+                <option value="North Atlantic">North Atlantic</option>
+                <option value="Northwest">Northwest</option>
+                <option value="OAC">OAC</option>
+                <option value="ODAC">ODAC</option>
+                <option value="PAC">PAC</option>
+                <option value="SAA">SAA</option>
+                <option value="SCIAC">SCIAC</option>
+                <option value="Skyline">Skyline</option>
+                <option value="SUNYAC">SUNYAC</option>
+                <option value="United East">United East</option>
+                <option value="USA South">USA South</option>
+            </select>      
+    </div>
+
+    <div id = "no" >No games on this date</div>
+
+    
+
+	<script >  
+        lax()
+        function lax()
+        {
+            
+            document.getElementById("no").style.display = "none";
+ 
+            var month = []
+            var day = []
+
+            
+            var realdate = []
+            var conf1 = []
+            var conf2 = []
+
+            var leaguename = []
+
+            var date = []
+            var time = []
+            var team1 = []
+            var team2 = []
+            var location = []
+            var competition = []
+            var link = []
+            var tv = []
+            var score1 = []
+            var score2 = []
+
+            var arrayarray = [date,time,team1,team2,location,competition,link,tv,score1,score2]
+  
+
+            counter = 0
+            const  uuid = generateUUID()
+            console.log('start of fetching timeout')
+            console.log('00')
+          
+
+            console.log('bye')
+            fetch('games.json?v='+uuid) 
+                .then(response => {
+                    if (!response.ok) {
+                    throw new Error('Network response was not ok[games]')}
+                    return response.json()
+                    console.log('something')
+                })
+                .then(data => {
+                    console.log('something')
+                    for (let league in data)    for(let game in data[league])   for(let property in data[league][game])
+                    {
+                        console.log('something')
+                        leaguename[counter] = league
+                        subcount=0
+                        for(let stat in data[league][game][property])
+                        {
+                            arrayarray[subcount][counter] = data[league][game][property][stat]
+                            subcount++                     
+                        }
+                        counter++
+
+                    }  
+                    start = team1.length
+                    console.log('2')  
+
+               
+                               
+                fetch('Display.csv?v='+uuid)
+                    .then(response => response.text())
+                    .then(csvData => {        
+                        stuff = csvData.replace(/\n/g,',')
+                        stuff = stuff.split(',')
+                console.log('end of fetching')      
+                console.log(team1.length)  
+
+                if(window.location.href.toString().includes('NCAA')||window.location.href.toString().includes('NLL')||window.location.href.toString().includes('World')||window.location.href.toString().includes('date=2'))
+                {
+                    console.log('start fakeloading')
+                    fakeloading = document.getElementById('loading').cloneNode(true)
+                    fakeloading.className = 'loading'
+                    fakeloading.id = ''
+                    console.log('end fakeloading')
+                    document.body.insertBefore(fakeloading,document.getElementsByClassName('filters')[0])
+                    console.log('end fakeloading')
+                }
+                fetch('NCAA.json') 
+                    .then(response => {
+                        if (!response.ok) {
+                        throw new Error('Network response was not ok {NCAA}')}
+                        return response.json()})
+                    .then(ncaadata => {
+                        for (let league in ncaadata)    for(let game in ncaadata[league])   for(let property in ncaadata[league][game])
+                        {
+                            leaguename[counter] = league
+                            subcount=0
+                            for(let stat in ncaadata[league][game][property])
+                            {
+                                arrayarray[subcount][counter] = ncaadata[league][game][property][stat]
+                                subcount++                     
+                            }
+                            
+                            counter++
+
+
+                            
+                        }  
+
+                        console.log('start of ncaabug creation')
+                        for (i=start; i<team1.length; i++)
+                        {
+                            var bug = document.createElement("div")
+                            bug.className = "bug"
+                            bug.id = i;
+
+                            var toplink = document.createElement("a")
+                            var top = document.createElement("div")
+                            top.className = "top"
+
+                            var bottomlink = document.createElement("a")
+                            var bottom = document.createElement("div")
+                            bottom.className = "bottom"
+
+                            var info = document.createElement("div")
+                            info.className = "info"
+
+                            var details = document.createElement('a')
+
+                            var gametype = document.createElement("div")
+                            gametype.className = "gametype"
+
+                            var t1 = document.createElement("span")
+                            t1.className = "team"
+                            var t2 = document.createElement("span")
+                            t2.className = "team"
+
+                            var r1 = document.createElement("span")
+                            r1.className = "record"
+                            var r2 = document.createElement("span")
+                            r2.className = "record"
+
+                            var l1 = document.createElement("img")
+                            l1.className = 'logo'
+
+                            var l2 = document.createElement("img")
+                            l2.className = 'logo'
+
+                            var final = document.createElement('div')
+                            final.className = 'final'
+                            
+
+
+                
+                            let one = stuff.indexOf(team1[i])              
+                            while((stuff[one+5]!=leaguename[i] && stuff[one+5].slice(0,7)!=leaguename[i].slice(0,7)) && one!=-1)
+                            {
+                                if(one%8==0) one += 8
+                                else one += 1
+                                one = stuff.indexOf(team1[i],one)
+                            } 
+                            let two = stuff.indexOf(team2[i])                 
+                            while((stuff[two+5]!=leaguename[i] && stuff[two+5].slice(0,7)!=leaguename[i].slice(0,7)) && two!=-1)
+                            {    
+                                if(two%8==0) two += 8 
+                                else two += 1
+                                two = stuff.indexOf(team2[i],two)
+                            } 
+
+
+
+
+                            t1.textContent = stuff[one+1] 
+                            if(stuff[one+1] =='Team Name')t1.textContent = team1[i]
+                            t2.textContent = stuff[two+1]
+                            if(stuff[two+1] =='Team Name')t2.textContent = team2[i] 
+
+                            conf1[i] = stuff[one+4]
+                            conf2[i] = stuff[two+4]
+                            if(competition[i]!='') gametype.innerHTML = competition[i]
+
+                            if(leaguename[i].includes('NCAA') && competition[i] == '')
+                            {
+                                if(conf1[i]==conf2[i]) 
+                                {
+                                    if((leaguename[i]=='NCAA MD1') && (date[i]>'2023-04-30'&&date[i]<'2023-05-09' && conf1[i]!='ACC')||(date[i]>'2023-04-28'&&date[i]<'2023-05-09'&&(conf1[i]=='MAAC'||conf1[i]=='Big Ten'))) gametype.innerHTML = stuff[one+4] + ' Tournament&emsp;&emsp;'
+                                    else if((leaguename[i]=='NCAA WD1') &&  ( (date[i]>'2023-04-29'&&date[i]<'2023-05-11'&&(conf1[i]!='Ivy League'||date[i]!='2023-04-30'))  ||  (date[i]>'2023-04-22'&&conf1[i]=='ACC') ||  (date[i]>'2023-04-28'&&conf1[i]=='Big Ten')) ) gametype.innerHTML = stuff[one+4] + ' Tournament&emsp;&emsp;'
+                                    else if((leaguename[i]=='NCAA MD2') &&  ( (date[i]>'2023-04-30'&&date[i]<'2023-05-08')  ||  (date[i]>'2023-04-23'&&conf1[i]=='Carolinas') ||  (date[i]>'2023-04-24'&&conf1[i]=='SAC')  ||  (date[i]>'2023-04-26'&&conf1[i]=='Sunshine State')  ||  (date[i]>'2023-04-27'&&conf1[i]=='Peach Belt') ||  (date[i]>'2023-04-28'&&conf1[i]=='NE-10')||  (date[i]>'2023-04-30'&&conf1[i]=='CACC')) ) gametype.innerHTML = stuff[one+4] + ' Tournament&emsp;&emsp;'
+                                    else if((leaguename[i]=='NCAA WD2') &&  ( (date[i]>'2023-04-30'&&date[i]<'2023-05-11')  ||  (date[i]>'2023-04-24'&&conf1[i]=='Carolinas') ||  (date[i]>'2023-04-24'&&conf1[i]=='SAC')  ||  (date[i]>'2023-04-26'&&conf1[i]=='Sunshine State')  ||  (date[i]>'2023-04-27'&&conf1[i]=='GLVC') ||  (date[i]>'2023-04-27'&&conf1[i]=='GLIAC')||  (date[i]>'2023-04-27'&&conf1[i]=='Gulf South') ) ) gametype.innerHTML = stuff[one+4] + ' Tournament&emsp;&emsp;'
+                                    else if((leaguename[i]=='NCAA MD3') &&  ( (date[i]>'2023-04-29'&&date[i]<'2023-05-10'&&(conf1[i]!='North Atlantic'||date[i]!='2023-05-02'))  ||    (date[i]>'2023-04-28'&&conf1[i]=='NESCAC')  ||  (date[i]>'2023-04-26'&&conf1[i]=='Atlantic East')  ||  (date[i]>'2023-04-28'&&conf1[i]=='GNAC') ||  (date[i]>'2023-04-28'&&conf1[i]=='CCC')||  (date[i]>'2023-04-28'&&conf1[i]=='OAC') ) ) gametype.innerHTML = stuff[one+4] + ' Tournament&emsp;&emsp;'
+                                    else if((leaguename[i]=='NCAA WD3') &&  ( (date[i]>'2023-04-30'&&date[i]<'2023-05-10'&&(conf1[i]!='USA South'||date[i]!='2023-05-01'))  ||    (date[i]>'2023-04-20'&&conf1[i]=='SAA')  ||  (date[i]>'2023-04-21'&&conf1[i]=='Northwest')  ||  (date[i]>'2023-04-27'&&conf1[i]=='GNAC') ||  (date[i]>'2023-04-28'&&conf1[i]=='SUNYAC')||  (date[i]>'2023-04-28'&&conf1[i]=='ODAC') ||  (date[i]>'2023-04-28'&&conf1[i]=='Atlantic East') ||  (date[i]>'2023-04-28'&&conf1[i]=='OAC') ||  (date[i]>'2023-04-28'&&conf1[i]=='CCC') ||  (date[i]>'2023-04-28'&&conf1[i]=='NEWMAC') ||  (date[i]>'2023-04-28'&&conf1[i]=='NESCAC')) ) gametype.innerHTML = stuff[one+4] + ' Tournament&emsp;&emsp;'
+                
+                                    else gametype.innerHTML = stuff[one+4] + ' Conference Play&emsp;&emsp;'
+                                    competition[i] = gametype.innerHTML
+                                }
+                                else
+                                {
+                                    gametype.innerHTML = 'Out Of Conference Play'
+                                    competition[i] = gametype.innerHTML
+                                }
+                            }
+
+                            if(leaguename[i]=='PLL')
+                            {
+                                if(competition[i].includes('Championship Series'))
+                                {
+                                    conf1[i]= 'Championship Series'
+                                    conf2[i]= 'Championship Series'
+                                }
+                                else
+                                {
+                                    conf1[i]= 'Regular Season'
+                                    conf2[i]= 'Regular Season'
+                                }
+                                
+                            }
+
+
+                            if(leaguename[i]=='World Lacrosse')
+                            {
+                                if(competition[i].includes('Place'))
+                                {
+                                    conf1[i]= 'Placement Games'
+                                    conf2[i]= 'Placement Games'
+                                }
+                                else if(competition[i] == '')
+                                {
+                                    conf1[i]= 'Pool Play'
+                                    conf2[i]= 'Pool Play'
+                                    gametype.innerHTML = stuff[one+4] + '&emsp;&emsp;'
+                                    competition[i] = gametype.innerHTML
+                                }
+                                else
+                                {
+                                    conf1[i]= 'Playoffs'
+                                    conf2[i]= 'Playoffs'
+                                }
+                            }
+
+
+                            if(!location[i].includes(',')) 
+                            {
+                                if(stuff[two+6]==''||stuff[two+6]=='League')location[i]==''
+                                else location[i] = stuff[two+6] + ", " + stuff[two+7]    
+                            }
+                            if(competition[i].includes('National')||leaguename[i].includes('3')||competition[i].includes('Tournament')) location[i]=''
+
+                            l1.src = stuff[one+3]
+                            l2.src = stuff[two+3]
+                            if(leaguename[i]=='World Lacrosse')
+                            {
+                                l1.id = 'country'
+                                l2.id = 'country'
+                            }
+
+                            toplink.href = 'index.html?date=Any&league='+stuff[one+5].replace(' ','+')+'&conf=Any'+'&team='+team1[i]
+                            bottomlink.href = 'index.html?date=Any&league='+stuff[two+5].replace(' ','+')+'&conf=Any'+'&team='+team2[i]
+
+                                
+                            if(time[i]!='N/A'&&!time[i].includes('Live')) final.innerHTML = '&emsp;' + time[i].slice(0,time[i].length-2) + ' PM ET'
+
+                            info.innerHTML = location[i] + '&emsp;'+ '&emsp;'  
+                            if(tv[i]!=undefined) info.innerHTML += tv[i] +'&emsp;'+ '&emsp;'
+                    
+                            if(link[i]!=undefined) 
+                            {
+                                details.textContent = 'Details'
+                                details.href = link[i]
+                                details.target = '_blank'
+                            }
+                            details.className = 'details'
+
+
+                            var s1 = document.createElement("span")
+                            s1.className = "score"
+                            s1.textContent = score1[i] 
+                            s1.textContent.replace('undefined','')
+                            
+                            var s2 = document.createElement("span")
+                            s2.className = "score"
+                            s2.textContent = score2[i]
+                            s2.textContent.replace('undefined','') 
+                        
+
+
+                    
+                            top.id = 'winner'
+                            toplink.id = 'winner'
+                            bottom.id = 'winner'
+                            bottomlink.id = 'winner'
+
+                            if(score1[i] != undefined && score1[i] != '' && !time[i].includes('Live'))
+                            {        
+                                final.innerHTML = 'Final'
+                                info.innerHTML = location[i]+ '&emsp;'+ '&emsp;'
+                                    
+                                if(parseInt(score1[i])>parseInt(score2[i])) 
+                                {
+                                bottom.id = 'loser'
+                                bottomlink.id = 'loser'
+                                }
+                                if(parseInt(score2[i])>parseInt(score1[i]))
+                                {
+                                    top.id = 'loser'
+                                    toplink.id = 'loser'
+                                }
+                            }
+                            if(score1[i] != undefined && score1[i] != '' && time[i].includes('Live'))
+                            {        
+                                final.innerHTML = time[i].replace('|','').replace('Live: ','')
+                                final.id = 'live'
+                            }
+                            else final.id =''
+
+                            
+                        
+                            toplink.appendChild(l1)
+                            toplink.appendChild(t1)
+                            toplink.appendChild(r1)
+                            top.appendChild(toplink)
+                    
+                            top.appendChild(s1)
+                            
+                            bottomlink.appendChild(l2)
+                            bottomlink.appendChild(t2)
+                            bottom.appendChild(r2)
+                            bottom.appendChild(bottomlink)
+                        
+                            bottom.appendChild(s2)
+
+                            bug.appendChild(gametype)
+                            bug.appendChild(final)
+                            bug.appendChild(top)
+                            bug.appendChild(bottom)
+                            bug.appendChild(info)
+                            bug.appendChild(details)
+
+                            scores.appendChild(bug)
+                            bug.style.display = 'none'
+
+                            let d = new Date(date[i])
+                            d.setDate(d.getDate()+1)
+                            let options = { weekday: 'long', month: 'long', day: 'numeric', timeZone: 'US/Eastern' }              
+                            realdate[i] = d.toLocaleDateString('en-US', options)
+
+                        }
+                        
+                        console.log(date.length)
+                        console.log('end of college bug creation')
+                        
+                    console.log('got college')
+                    console.log(date)
+
+                    if(window.location.href.toString().includes('NCAA')||window.location.href.toString().includes('NLL')||window.location.href.toString().includes('World')||window.location.href.toString().includes('date=2'))
+                    {
+                        change()
+                        //document.body.removeChild(document.getElementById('fakeloading'))
+                    }
+                })
+    
+
+           
+                     
+
+            let i = 0
+            console.log(date.length)
+            while (i<date.length)
+            {
+                let d = new Date(date[i])
+                d.setDate(d.getDate()+1)
+                let options = { weekday: 'long', month: 'long', day: 'numeric', timeZone: 'US/Eastern' }              
+                realdate[i] = d.toLocaleDateString('en-US', options)
+                i++
+            }
+
+            var scores = document.createElement("div")
+            scores.className = 'scores'
+            document.body.appendChild(scores)
+
+    
+            console.log('start of bug creation')
+            for (i=0; i<team1.length; i++)
+            {
+                var bug = document.createElement("div")
+                bug.className = "bug"
+                bug.id = i;
+
+                var toplink = document.createElement("a")
+                var top = document.createElement("div")
+                top.className = "top"
+
+                var bottomlink = document.createElement("a")
+                var bottom = document.createElement("div")
+                bottom.className = "bottom"
+
+                var info = document.createElement("div")
+                info.className = "info"
+
+                var details = document.createElement('a')
+
+                var gametype = document.createElement("div")
+                gametype.className = "gametype"
+
+                var t1 = document.createElement("span")
+                t1.className = "team"
+                var t2 = document.createElement("span")
+                t2.className = "team"
+
+                var r1 = document.createElement("span")
+                r1.className = "record"
+                var r2 = document.createElement("span")
+                r2.className = "record"
+
+                var l1 = document.createElement("img")
+                l1.className = 'logo'
+
+                var l2 = document.createElement("img")
+                l2.className = 'logo'
+
+                var final = document.createElement('div')
+                final.className = 'final'
+                
+
+
+    
+                let one = stuff.indexOf(team1[i])              
+                while((stuff[one+5]!=leaguename[i] && stuff[one+5].slice(0,7)!=leaguename[i].slice(0,7)) && one!=-1)
+                {
+                    if(one%8==0) one += 8
+                    else one += 1
+                    one = stuff.indexOf(team1[i],one)
+                } 
+                let two = stuff.indexOf(team2[i])                 
+                while((stuff[two+5]!=leaguename[i] && stuff[two+5].slice(0,7)!=leaguename[i].slice(0,7)) && two!=-1)
+                {    
+                    if(two%8==0) two += 8 
+                    else two += 1
+                    two = stuff.indexOf(team2[i],two)
+                } 
+
+
+
+
+                t1.textContent = stuff[one+1] 
+                if(stuff[one+1] =='Team Name')t1.textContent = team1[i]
+                t2.textContent = stuff[two+1]
+                if(stuff[two+1] =='Team Name')t2.textContent = team2[i] 
+
+                conf1[i] = stuff[one+4]
+                conf2[i] = stuff[two+4]
+                if(competition[i]!='') gametype.innerHTML = competition[i]
+
+                if(leaguename[i].includes('NCAA') && competition[i] == '')
+                {
+                    if(conf1[i]==conf2[i]) 
+                    {
+                        if((leaguename[i]=='NCAA MD1') && (date[i]>'2023-04-30'&&date[i]<'2023-05-09' && conf1[i]!='ACC')||(date[i]>'2023-04-28'&&date[i]<'2023-05-09'&&(conf1[i]=='MAAC'||conf1[i]=='Big Ten'))) gametype.innerHTML = stuff[one+4] + ' Tournament&emsp;&emsp;'
+                        else if((leaguename[i]=='NCAA WD1') &&  ( (date[i]>'2023-04-29'&&date[i]<'2023-05-11'&&(conf1[i]!='Ivy League'||date[i]!='2023-04-30'))  ||  (date[i]>'2023-04-22'&&conf1[i]=='ACC') ||  (date[i]>'2023-04-28'&&conf1[i]=='Big Ten')) ) gametype.innerHTML = stuff[one+4] + ' Tournament&emsp;&emsp;'
+                        else if((leaguename[i]=='NCAA MD2') &&  ( (date[i]>'2023-04-30'&&date[i]<'2023-05-08')  ||  (date[i]>'2023-04-23'&&conf1[i]=='Carolinas') ||  (date[i]>'2023-04-24'&&conf1[i]=='SAC')  ||  (date[i]>'2023-04-26'&&conf1[i]=='Sunshine State')  ||  (date[i]>'2023-04-27'&&conf1[i]=='Peach Belt') ||  (date[i]>'2023-04-28'&&conf1[i]=='NE-10')||  (date[i]>'2023-04-30'&&conf1[i]=='CACC')) ) gametype.innerHTML = stuff[one+4] + ' Tournament&emsp;&emsp;'
+                        else if((leaguename[i]=='NCAA WD2') &&  ( (date[i]>'2023-04-30'&&date[i]<'2023-05-11')  ||  (date[i]>'2023-04-24'&&conf1[i]=='Carolinas') ||  (date[i]>'2023-04-24'&&conf1[i]=='SAC')  ||  (date[i]>'2023-04-26'&&conf1[i]=='Sunshine State')  ||  (date[i]>'2023-04-27'&&conf1[i]=='GLVC') ||  (date[i]>'2023-04-27'&&conf1[i]=='GLIAC')||  (date[i]>'2023-04-27'&&conf1[i]=='Gulf South') ) ) gametype.innerHTML = stuff[one+4] + ' Tournament&emsp;&emsp;'
+                        else if((leaguename[i]=='NCAA MD3') &&  ( (date[i]>'2023-04-29'&&date[i]<'2023-05-10'&&(conf1[i]!='North Atlantic'||date[i]!='2023-05-02'))  ||    (date[i]>'2023-04-28'&&conf1[i]=='NESCAC')  ||  (date[i]>'2023-04-26'&&conf1[i]=='Atlantic East')  ||  (date[i]>'2023-04-28'&&conf1[i]=='GNAC') ||  (date[i]>'2023-04-28'&&conf1[i]=='CCC')||  (date[i]>'2023-04-28'&&conf1[i]=='OAC') ) ) gametype.innerHTML = stuff[one+4] + ' Tournament&emsp;&emsp;'
+                        else if((leaguename[i]=='NCAA WD3') &&  ( (date[i]>'2023-04-30'&&date[i]<'2023-05-10'&&(conf1[i]!='USA South'||date[i]!='2023-05-01'))  ||    (date[i]>'2023-04-20'&&conf1[i]=='SAA')  ||  (date[i]>'2023-04-21'&&conf1[i]=='Northwest')  ||  (date[i]>'2023-04-27'&&conf1[i]=='GNAC') ||  (date[i]>'2023-04-28'&&conf1[i]=='SUNYAC')||  (date[i]>'2023-04-28'&&conf1[i]=='ODAC') ||  (date[i]>'2023-04-28'&&conf1[i]=='Atlantic East') ||  (date[i]>'2023-04-28'&&conf1[i]=='OAC') ||  (date[i]>'2023-04-28'&&conf1[i]=='CCC') ||  (date[i]>'2023-04-28'&&conf1[i]=='NEWMAC') ||  (date[i]>'2023-04-28'&&conf1[i]=='NESCAC')) ) gametype.innerHTML = stuff[one+4] + ' Tournament&emsp;&emsp;'
+    
+                        else gametype.innerHTML = stuff[one+4] + ' Conference Play&emsp;&emsp;'
+                        competition[i] = gametype.innerHTML
+                    }
+                    else
+                    {
+                        gametype.innerHTML = 'Out Of Conference Play'
+                        competition[i] = gametype.innerHTML
+                    }
+                }
+
+                if(leaguename[i]=='PLL')
+                {
+                    if(competition[i].includes('Championship Series'))
+                    {
+                        conf1[i]= 'Championship Series'
+                        conf2[i]= 'Championship Series'
+                    }
+                    else
+                    {
+                        conf1[i]= 'Regular Season'
+                        conf2[i]= 'Regular Season'
+                    }
+                    
+                }
+
+
+                if(leaguename[i]=='World Lacrosse')
+                {
+                    if(competition[i].includes('Place'))
+                    {
+                        conf1[i]= 'Placement Games'
+                        conf2[i]= 'Placement Games'
+                    }
+                    else if(competition[i] == '')
+                    {
+                        conf1[i]= 'Pool Play'
+                        conf2[i]= 'Pool Play'
+                        gametype.innerHTML = stuff[one+4] + '&emsp;&emsp;'
+                        competition[i] = gametype.innerHTML
+                    }
+                    else
+                    {
+                        conf1[i]= 'Playoffs'
+                        conf2[i]= 'Playoffs'
+                    }
+                }
+
+
+                if(!location[i].includes(',')) 
+                {
+                    if(stuff[two+6]==''||stuff[two+6]=='League')location[i]==''
+                    else location[i] = stuff[two+6] + ", " + stuff[two+7]    
+                }
+                if(competition[i].includes('National')||leaguename[i].includes('3')||competition[i].includes('Tournament')) location[i]=''
+
+                l1.src = stuff[one+3]
+                l2.src = stuff[two+3]
+                if(leaguename[i]=='World Lacrosse')
+                {
+                    l1.id = 'country'
+                    l2.id = 'country'
+                }
+
+                toplink.href = 'index.html?date=Any&league='+stuff[one+5].replace(' ','+')+'&conf=Any'+'&team='+team1[i]
+                bottomlink.href = 'index.html?date=Any&league='+stuff[two+5].replace(' ','+')+'&conf=Any'+'&team='+team2[i]
+
+                    
+                if(time[i]!='N/A'&&!time[i].includes('Live')) final.innerHTML = '&emsp;' + time[i].slice(0,time[i].length-2) + ' PM ET'
+
+                info.innerHTML = location[i] + '&emsp;'+ '&emsp;'  
+                if(tv[i]!=undefined) info.innerHTML += tv[i] +'&emsp;'+ '&emsp;'
+        
+                if(link[i]!=undefined) 
+                {
+                    details.textContent = 'Details'
+                    details.href = link[i]
+                    details.target = '_blank'
+                }
+                details.className = 'details'
+
+
+                var s1 = document.createElement("span")
+                s1.className = "score"
+                s1.textContent = score1[i] 
+                s1.textContent.replace('undefined','')
+                
+                var s2 = document.createElement("span")
+                s2.className = "score"
+                s2.textContent = score2[i]
+                s2.textContent.replace('undefined','') 
+               
+
+
+        
+                top.id = 'winner'
+                toplink.id = 'winner'
+                bottom.id = 'winner'
+                bottomlink.id = 'winner'
+
+                if(score1[i] != undefined && score1[i] != '' && !time[i].includes('Live'))
+                {        
+                    final.innerHTML = 'Final'
+                    info.innerHTML = location[i]+ '&emsp;'+ '&emsp;'
+                        
+                    if(parseInt(score1[i])>parseInt(score2[i])) 
+                    {
+                       bottom.id = 'loser'
+                       bottomlink.id = 'loser'
+                    }
+                    if(parseInt(score2[i])>parseInt(score1[i]))
+                    {
+                        top.id = 'loser'
+                        toplink.id = 'loser'
+                    }
+                }
+                if(score1[i] != undefined && score1[i] != '' && time[i].includes('Live'))
+                {        
+                    final.innerHTML = time[i].replace('|','').replace('Live: ','')
+                    final.id = 'live'
+                }
+                else final.id =''
+
+                
+               
+                toplink.appendChild(l1)
+                toplink.appendChild(t1)
+                toplink.appendChild(r1)
+                top.appendChild(toplink)
+           
+                top.appendChild(s1)
+                
+                bottomlink.appendChild(l2)
+                bottomlink.appendChild(t2)
+                 bottom.appendChild(r2)
+                bottom.appendChild(bottomlink)
+               
+                bottom.appendChild(s2)
+
+                bug.appendChild(gametype)
+                bug.appendChild(final)
+                bug.appendChild(top)
+                bug.appendChild(bottom)
+                bug.appendChild(info)
+                bug.appendChild(details)
+
+                scores.appendChild(bug)
+
+            }
+            console.log('end of bug creation')
+      
+            track(team1,team2,score1,score2,leaguename,competition,time)
+
+            today = new Date()
+            d = String(today.getDate()).padStart(2,'0')
+            m = String(today.getMonth() + 1).padStart(2,'0')
+            y = today.getFullYear()
+            formattedDate = y + '-' + m + '-' + d
+            document.getElementById("date").value = formattedDate
+
+
+            document.getElementById("date").addEventListener('change',function(){change()})
+            document.getElementById("league").addEventListener("change",function(){change()}) 
+
+            document.getElementById("division").addEventListener('change',function(){change()})
+            document.getElementById("gender").addEventListener('change',function(){change()})   
+            document.getElementById("PLL ").addEventListener('change',function(){change()})
+            document.getElementById("NLL ").addEventListener('change',function(){change()})
+            document.getElementById("World Lacrosse ").addEventListener('change',function(){change()})
+            document.getElementById("NCAA MD1 ").addEventListener('change',function(){change()})
+            document.getElementById("NCAA MD2 ").addEventListener('change',function(){change()})
+            document.getElementById("NCAA MD3 ").addEventListener('change',function(){change()})
+            document.getElementById("NCAA WD1 ").addEventListener('change',function(){change()})
+            document.getElementById("NCAA WD2 ").addEventListener('change',function(){change()})
+            document.getElementById("NCAA WD3 ").addEventListener('change',function(){change()})
+            window.addEventListener("popstate", function(event){change() });
+
+
+
+
+
+
+
+
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //              CHANGE
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+            let curr = new URL(window.location.href)
+            if(curr.toString().length<36) curr = 'index.html?date=Any&league=Any&conf=Any&team=Any'
+            window.history.pushState({},'',curr)
+    
+            let url = ''
+            
+            function change()
+            {   
+                console.log('start of change')
+                curr = window.location.href
+    
+                if(url != curr)
+                {   
+                    url = new URL(window.location.href)
+
+                    calender = url.searchParams.get('date')
+                    if(calender == 'Any') document.getElementById('date').value = ''
+                    else document.getElementById('date').value = calender
+                    
+                    league = url.searchParams.get('league').replace('+',' ') 
+                    if(league.includes('NCAA'))
+                    {
+                        document.getElementById('league').value = league.slice(0,4)
+                        if(league.length>5) document.getElementById('gender').value = league.slice(4,6)
+                        if(league.length>6) document.getElementById('division').value = league.slice(6)
+                     }
+                     else document.getElementById('league').value = league
+
+                    conf = url.searchParams.get('conf').replace('+',' ')
+                    if(league != 'Any' && !league.includes('NCAA') && league != 'MSL' && league != 'WLA') document.getElementById(league+' ').value = conf
+                    else if(league.includes('NCAA') && league.length>7) document.getElementById(league+' ').value = conf
+                    
+                    team = url.searchParams.get('team') 
+
+                    prevleague = document.getElementById('league').value
+                    if(prevleague!='Any' && (!prevleague.includes('NCAA') && (prevleague != 'MSL'&&prevleague != 'WLA') || prevleague.length>7 ) ) prevconf = document.getElementById(prevleague+' ').value
+                    else prevconf='Any'
+                    if((!prevleague.includes(league)&&!league.includes(prevleague)) || (!prevconf.includes(conf)&&!conf.includes(prevconf))) team = 'Any' 
+                }
+                else
+                {          
+                    url = new URL(window.location.href)
+                    
+                    calender = document.getElementById('date').value
+                    if(calender=='')calender='Any'
+
+                    league = document.getElementById('league').value
+                    if(league.includes('NCAA')) 
+                    {           
+                        if(document.getElementById('gender').value!='Any') league += document.getElementById('gender').value
+                        if(document.getElementById('division').value!='Any') league += document.getElementById('division').value
+                    }
+                    conf = 'Any'
+                    if(league != 'Any'&& (league != 'MSL'&&league != 'WLA')&&(league.length<4 || league.length>7)) conf = document.getElementById(league+' ').value
+
+                    team = url.searchParams.get('team')
+
+                    prevleague = url.searchParams.get('league').replace('+',' ')
+                    prevconf = url.searchParams.get('conf').replace('+',' ')
+                    if((!prevleague.includes(league)&&!league.includes(prevleague)) || (!prevconf.includes(conf)&&!conf.includes(prevconf))) team = 'Any'
+
+                    url.searchParams.set('team', team)
+                    url.searchParams.set('date', calender)
+                    url.searchParams.set('league', league)
+                    url.searchParams.set('conf', conf)
+
+                    window.history.pushState({}, '', url.toString())
+                }
+                
+
+
+       
+                let dropdowns = document.getElementsByClassName('type')
+                for(let i = 1; i<dropdowns.length; i++)
+                {   
+                    if((dropdowns[i].id == (league+' ')) ||((dropdowns[i].id == 'gender')&&league.includes('NCAA'))||((dropdowns[i].id == 'division')&&document.getElementById('gender').value!='Any')) dropdowns[i].style.display = "block" 
+                    else
+                    {
+                        dropdowns[i].style.display = "none" 
+                        dropdowns[i].value = 'Any' 
+                    }
+                    if((dropdowns[i].id == ('PLL ') && calender != 'Any')) dropdowns[i].style.display = "none" 
+                }
+
+                console.log(team1)
+
+                let array = []
+                document.getElementById("no").style.display = "none"
+                for(i=0;i<team1.length;i++)
+                {
+                    document.getElementById(i).style.display = "none"
+                    if((leaguename[i].includes(league) || league=='Any') && (date[i] == calender || calender=='Any') && (team1[i]==team || team2[i]==team || team=='Any') && (conf == 'Any' || conf1[i] == conf || conf2[i] == conf))
+                    {   
+                        if(league=='Any'&&calender=='Any'&&date[i]<formattedDate);
+                        else
+                        {
+                            document.getElementById(i).style.display = "block"
+                            array.push(i)
+                        }
+                    }   
+                }  
+                
+
+                if(array.length==0) 
+                {
+                    document.getElementById("no").style.display = "block"
+                    document.body.removeChild(document.getElementById('loading'))
+                    for(i=0;i<document.getElementsByClassName('con').length;i++)document.getElementsByClassName('con')[i].style.display='none'
+                    for(i=0;i<document.getElementsByClassName('label').length;i++)document.getElementsByClassName('label')[i].style.display='none'
+                    for(i=0;i<document.getElementsByClassName('subcon').length;i++)document.getElementsByClassName('subcon')[i].style.display='none'
+                    for(i=0;i<document.getElementsByClassName('firstcon').length;i++)document.getElementsByClassName('subcon')[i].style.display='none'
+               
+                }
+                else 
+                {
+                    console.log('end of change')
+                    sorter(array,calender,league,team)
+                }
+                
+    
+
+
+                document.getElementById('plllabel').style.display = "none"
+                document.getElementById('ncaalabel').style.display = "none"
+                document.getElementById('genlabel').style.display = "none"
+                document.getElementById('divlabel').style.display = "none"
+
+               /* if(league=='World Lacrosse') document.getElementById('plllabel').style.display = "block"
+                if(league=='PLL' && calender=='Any') document.getElementById('plllabel').style.display = "block"
+                if(league.includes('NLL')) document.getElementById('ncaalabel').style.display = "block"
+                if(league.includes('NCAA')) if(league.length>7) document.getElementById('ncaalabel').style.display = "block"*/
+
+               
+                console.log('end of change')
+            }   
+            change() 
+
+
+
+
+
+
+
+
+
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            //              Sorter
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+            function sorter(array,calender,league,team)
+            {
+    
+                console.log('start of sorter')
+                for(i=0;i<document.getElementsByClassName('con').length;i++)document.getElementsByClassName('con')[i].style.display='none'
+                for(i=0;i<document.getElementsByClassName('label').length;i++)document.getElementsByClassName('label')[i].style.display='none'
+                for(i=0;i<document.getElementsByClassName('subcon').length;i++)document.getElementsByClassName('subcon')[i].style.display='none'
+
+                let leaguelist= ['PLL', 'Premier Lacrosse League','NLL','National Lacrosse League','World Lacrosse','World Lacrosse Championship','NCAA MD1','NCAA Men\'s Division 1','NCAA MD2','NCAA Men\'s Division 2','NCAA MD3','NCAA Men\'s Division 3','NCAA WD1','NCAA Women\'s Division 1','NCAA WD2','NCAA Women\'s Division 2','NCAA WD3','NCAA Women\'s Division 3','MSL','Major Series Lacrosse','WLA','Western Lacrosse Association']
+            
+              
+                l = document.createElement('div')
+                label = document.createElement('a')    
+                label.className='label'
+                l.appendChild(label)
+                l.className='container'
+                subcon=document.createElement('div')
+                subcon.className ='subcon'
+                con=document.createElement('div')
+                con.className='con'
+                con.appendChild(l)
+                con.appendChild(subcon)
+
+                first = ''
+
+                
+                if(calender!='Any' )  
+                {
+                    let d = new Date(calender);
+                    d.setDate(d.getDate()+1)
+                    let options = { weekday: 'long', month: 'long', day: 'numeric', timeZone: 'US/Eastern' }              
+                    calender = d.toLocaleDateString('en-US', options)
+
+                    datecon = con.cloneNode(true)
+                    datecon.getElementsByClassName('label')[0].innerHTML = calender
+                    scores.appendChild(datecon)
+
+                    datecon.id='first'
+                    first='datecon'
+                }
+               else if(league!='Any' &&(!(league.includes('NCAA')&&league.length<8)))
+                {
+                    leaguecon = con.cloneNode(true)
+                    if(team!='Any') 
+                    {
+                        one = stuff.indexOf(team)                 
+                        while(stuff[one+5]!=league && one!=-1)
+                        {
+                            if(one%8==0) one += 8
+                            else one += 1
+                            one = stuff.indexOf(team,one)
+                        } 
+                        leaguecon.getElementsByClassName('label')[0].innerHTML = stuff[one+2]
+                        leaguelink = document.createElement('a')
+                        leaguelink.id = 'leaguelink'
+                        leaguelink.innerHTML = leaguelist[leaguelist.indexOf(league)+1]
+                        leaguelink.href = 'index.html?date=Any&league='+league.replace(' ','+')+'&conf=Any&team=Any'
+                        leaguecon.getElementsByClassName('container')[0].appendChild(leaguelink)
+                    }
+                    else leaguecon.getElementsByClassName('label')[0].innerHTML = leaguelist[leaguelist.indexOf(league)+1]
+                    scores.appendChild(leaguecon)
+
+                    leaguecon.id='first'
+                    first='leaguecon'
+                }
+
+
+
+
+                
+                let currentleague = ''
+                let currentdate = ''
+                let currentconf = ''
+                
+                let before = []
+                let after = []
+                for(let i = 0; i<array.length; i++)
+                {
+                    if(date[array[i]] >= formattedDate) after.push(array[i])
+                    else before.push(array[i])
+                }
+                while(after.length>0)
+                {
+                    
+                    let f = '2030-01-01'
+                    let num = 0
+                    for(let i = 0; i<after.length; i++)
+                    {
+                        if(date[after[i]]<f) 
+                        {
+                            f = date[after[i]]
+                            num = i
+                        }
+                    }
+                    record = localStorage.getItem('key')
+                    record = record.split(/[$#]/)
+                    if( (score1[after[num]]==undefined || score1[after[num]]=='') && !time[after[num]].includes('Live') && !competition[after[num]].includes('Finals') )
+                    {
+                        t1 = record.indexOf(team1[after[num]])
+
+                        count=0
+                        if(competition[after[num]].includes('Finals:')) competition[after[num]] = 'Finals'
+                        while(competition[after[num]]!=record[t1+2] && count<5)
+                        {
+                            t1++
+                            t1 = record.indexOf(team1[after[num]],t1)
+                            count++
+                        }
+                        count=0
+                        t2 = record.indexOf(team2[after[num]])
+                        while(competition[after[num]]!=record[t2+2]&&count<5)
+                        {
+                            t2++
+                            t2 = record.indexOf(team2[after[num]],t2)
+                            count++
+                        }
+
+                        if(t1!=-1)
+                        {
+                            r1 = ' ('+record[t1+3] + '-'+record[t1+4]+')'
+                            r2 = ' ('+record[t2+3] + '-'+record[t2+4]+')'
+                        }
+                        else
+                        {
+                            r1 = ''
+                            r2 ='' 
+                        }
+/*
+                        oned = document.getElementById(after[num]).getElementsByClassName('team')[0]
+                        if(oned.textContent.indexOf('(')>-1) oned.textContent = oned.textContent.slice(0,oned.textContent.indexOf('('))
+                        oned.textContent+=r1*/
+                        document.getElementById(after[num]).getElementsByClassName('record')[0].textContent = r1
+                        document.getElementById(after[num]).getElementsByClassName('record')[1].textContent = r2
+                      /*  twod = document.getElementById(after[num]).getElementsByClassName('team')[1]
+                        if(twod.textContent.indexOf('(')>-1) twod.textContent = twod.textContent.slice(0,twod.textContent.indexOf('('))
+                        twod.textContent+=r2*/
+                    }
+                    
+
+                    if(leaguename[after[num]]!=currentleague && first=='datecon'&& ( date[after[num]]==currentdate || currentdate == '')  )
+                    {
+                        leaguecon = con.cloneNode(true)
+                        leaguecon.getElementsByClassName('label')[0].innerHTML = leaguelist[leaguelist.indexOf(leaguename[after[num]])+1]
+                        datecon.getElementsByClassName('subcon')[0].appendChild(leaguecon)
+
+                        leaguecon.id='second'
+                        leaguecon.getElementsByClassName('label')[0].id='hover'
+                        leaguecon.getElementsByClassName('label')[0].href='index.html?date=Any&league='+leaguename[after[num]].replace(' ','+')+'&conf=Any'+'&team=Any'
+
+                        currentleague = leaguename[after[num]]
+                        currentdate = date[after[num]]
+                    }
+
+                    else if(date[after[num]]!=currentdate && first=='leaguecon') 
+                    {
+                        datecon = con.cloneNode(true)
+                        datecon.getElementsByClassName('label')[0].innerHTML = realdate[after[num]]
+                        leaguecon.getElementsByClassName('subcon')[0].appendChild(datecon)
+
+                        datecon.id='second'
+                        datecon.getElementsByClassName('label')[0].id='hover'
+                        datecon.getElementsByClassName('label')[0].href='index.html?date='+date[after[num]]+'&league=Any&conf=Any'+'&team=Any'
+                       
+                        currentdate = date[after[num]]
+                        currentleague = leaguename[after[num]]
+                    }
+                    else if(date[after[num]]!=currentdate)
+                    {
+                       datecon = con.cloneNode(true)
+                       datecon.getElementsByClassName('label')[0].innerHTML = realdate[after[num]]
+                       scores.appendChild(datecon)
+
+                       leaguecon = con.cloneNode(true)
+                       leaguecon.getElementsByClassName('label')[0].innerHTML = leaguelist[leaguelist.indexOf(leaguename[after[num]])+1]
+                       datecon.getElementsByClassName('subcon')[0].appendChild(leaguecon)
+
+                       datecon.id='first'
+                       first='datecon'
+                       leaguecon.id='second'
+                       leaguecon.getElementsByClassName('label')[0].id='hover'
+                       leaguecon.getElementsByClassName('label')[0].href='index.html?date=Any&league='+leaguename[after[num]].replace(' ','+')+'&conf=Any'+'&team=Any'
+
+                       currentdate = date[after[num]]
+                       currentleague = leaguename[after[num]]
+                    }
+
+
+                    if(first=='leaguecon') datecon.getElementsByClassName('subcon')[0].appendChild(document.getElementById(after[num]))
+                    else leaguecon.getElementsByClassName('subcon')[0].appendChild(document.getElementById(after[num]))
+                  
+
+                    after.splice(num,1)
+                }
+                while(before.length>0)
+                {
+                    f = '2000-01-01'
+                    num = 0
+                    for(let i = 0; i<before.length; i++)
+                    {   
+                        if(date[before[i]]>f) 
+                        {
+                            f = date[before[i]]
+                            num = i
+                        }
+                    }
+                    
+                    if(first=='' && (league=='Any')) document.getElementById(before[num]).style.display='none'
+
+                    else if(leaguename[before[num]]!=currentleague && first=='datecon' &&   (date[before[num]]==currentdate || currentdate == '')   )
+                    {
+                        leaguecon = con.cloneNode(true)
+                        leaguecon.getElementsByClassName('label')[0].innerHTML = leaguelist[leaguelist.indexOf(leaguename[before[num]])+1]
+                        datecon.getElementsByClassName('subcon')[0].appendChild(leaguecon)
+
+                        leaguecon.id='second'
+                        leaguecon.getElementsByClassName('label')[0].id='hover'
+                        leaguecon.getElementsByClassName('label')[0].href='index.html?date=Any&league='+leaguename[before[num]].replace(' ','+')+'&conf=Any&team=Any'
+
+                        currentleague = leaguename[before[num]]
+                        currentdate = date[before[num]]
+                    }
+                    else if(date[before[num]]!=currentdate && first=='leaguecon') 
+                    {
+                        datecon = con.cloneNode(true)
+                        datecon.getElementsByClassName('label')[0].innerHTML = realdate[before[num]]
+                        leaguecon.getElementsByClassName('subcon')[0].appendChild(datecon)
+
+                        datecon.id='second'
+                        datecon.getElementsByClassName('label')[0].id='hover'
+                        datecon.getElementsByClassName('label')[0].href='index.html?date='+date[before[num]]+'&league=Any&conf=Any&team=Any'
+                       
+                        currentdate = date[before[num]]
+                        currentleague = leaguename[before[num]]
+                    }
+                    else if(date[before[num]]!=currentdate)
+                    {
+                       datecon = con.cloneNode(true)
+                       datecon.getElementsByClassName('label')[0].innerHTML = realdate[before[num]]
+                       scores.appendChild(datecon)
+
+                       leaguecon = con.cloneNode(true)
+                       leaguecon.getElementsByClassName('label')[0].innerHTML = leaguelist[leaguelist.indexOf(leaguename[before[num]])+1]
+                       datecon.getElementsByClassName('subcon')[0].appendChild(leaguecon)
+
+                       datecon.id='first'
+                       first='datecon'
+                       leaguecon.id='second'
+                       leaguecon.getElementsByClassName('label')[0].id='hover'
+                       leaguecon.getElementsByClassName('label')[0].href='index.html?date=Any&league='+leaguename[before[num]].replace(' ','+')+'&conf=Any'+'&team=Any'
+
+                       currentdate = date[before[num]]
+                       currentleague = leaguename[before[num]]
+                    }
+
+                    if(first=='leaguecon') datecon.getElementsByClassName('subcon')[0].appendChild(document.getElementById(before[num]))
+                    else leaguecon.getElementsByClassName('subcon')[0].appendChild(document.getElementById(before[num]))
+                  
+
+
+                    before.splice(num,1)
+                }
+                console.log('poop')
+                if(document.getElementById('loading')!=null)document.body.removeChild(document.getElementById('loading'))
+                for(let l=0; l<document.body.getElementsByClassName('loading').length; l++)
+                {
+                    console.log('poop')
+                    document.body.removeChild(document.getElementsByClassName('loading')[l])
+                } 
+                console.log('end of sorter')
+            }
+        })
+        .catch(error => {
+            console.log('Error:')
+            document.getElementById('loading').removeChild(document.getElementById('loading').getElementsByTagName('img')[0])
+            document.getElementById('loading').innerHTML = 'Connection Error: Reload Window'
+        })
+        })
+
+        function fetchWithTimeout(url, timeout) 
+        {
+            console.log('start')
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+            const fetchPromise = fetch(url, { signal: controller.signal })
+                .then(response => {
+                    console.log('succeed')
+                    //clearTimeout(timeoutId); // Clear the timeout if the fetch succeeds
+                    return response.json();  // Parse the response as JSON
+                })
+                .catch(error => {
+                    console.log('ERROR')
+                    throw error; // Re-throw other errors
+                
+                });
+            console.log('done')
+            console.log(fetchPromise)
+            return fetchPromise;
+        }
+
+
+        function generateUUID() 
+        {
+            let uuid = '';
+            const characters = 'abcdef0123456789'
+            const sections = [8, 4, 4, 4, 12]
+
+            for (let sectionLength of sections) 
+            {
+                for (let i = 0; i < sectionLength; i++) 
+                {
+                    const randomIndex = Math.floor(Math.random() * characters.length);
+                    uuid += characters.charAt(randomIndex);
+                }
+
+                if (sectionLength !== 12) 
+                {
+                    uuid += '-'
+                }
+            }
+
+            return uuid;
+        }
+    }
+
+	</script>
+</body>
+</html>
+`
